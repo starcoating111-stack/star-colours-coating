@@ -508,5 +508,515 @@
     "mtime": 1782883916.4438236,
     "ast_hash": "2acb7dd749d2949a703671cce223ef5f",
     "semantic_hash": ""
+  },
+  "/home/rakshitbhai/generalize-landing-template/.claude/settings.local.json": {
+    "mtime": 1782835877.3698385,
+    "ast_hash": "8873b4b5bc555b11082b1369ce09d845",
+    "semantic_hash": "8873b4b5bc555b11082b1369ce09d845"
+  },
+  "/home/rakshitbhai/generalize-landing-template/.vscode/extensions.json": {
+    "mtime": 1782820377.5151782,
+    "ast_hash": "3e64a4642679fdd23cb1b68d89da983f",
+    "semantic_hash": "3e64a4642679fdd23cb1b68d89da983f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/.vscode/settings.json": {
+    "mtime": 1782820377.5141783,
+    "ast_hash": "bb97b5c48786209df82e0bfb86a4505a",
+    "semantic_hash": "bb97b5c48786209df82e0bfb86a4505a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle.config.ts": {
+    "mtime": 1782820465.907695,
+    "ast_hash": "ae780dd9be810f128d9329f508715c8c",
+    "semantic_hash": "ae780dd9be810f128d9329f508715c8c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/0000_acoustic_richard_fisk.sql": {
+    "mtime": 1782820468.9456782,
+    "ast_hash": "ebf90443941a4655d4d71f66491ab7b7",
+    "semantic_hash": "ebf90443941a4655d4d71f66491ab7b7"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/0001_project_images_media.sql": {
+    "mtime": 1782835612.843197,
+    "ast_hash": "25712b13daf6254f4e669ee91bde8763",
+    "semantic_hash": "25712b13daf6254f4e669ee91bde8763"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/0002_push_subscriptions.sql": {
+    "mtime": 1782842334.7526863,
+    "ast_hash": "f7295ae45430c09ddea0e27f70af4266",
+    "semantic_hash": "f7295ae45430c09ddea0e27f70af4266"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/0003_whatsapp_default_message.sql": {
+    "mtime": 1782845211.255966,
+    "ast_hash": "b815fafc1d238b3e72e543ebe93fa13d",
+    "semantic_hash": "b815fafc1d238b3e72e543ebe93fa13d"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/meta/0000_snapshot.json": {
+    "mtime": 1782820468.9456782,
+    "ast_hash": "092864acfeac4e5c44d31ee99dfa9c67",
+    "semantic_hash": "092864acfeac4e5c44d31ee99dfa9c67"
+  },
+  "/home/rakshitbhai/generalize-landing-template/drizzle/meta/_journal.json": {
+    "mtime": 1782820468.9456782,
+    "ast_hash": "2dfb0bcd89f4d4d4bf670ffaaa7ded38",
+    "semantic_hash": "2dfb0bcd89f4d4d4bf670ffaaa7ded38"
+  },
+  "/home/rakshitbhai/generalize-landing-template/eslint.config.js": {
+    "mtime": 1782820444.9838092,
+    "ast_hash": "321298f6b69d110fd60302b48a8f9252",
+    "semantic_hash": "321298f6b69d110fd60302b48a8f9252"
+  },
+  "/home/rakshitbhai/generalize-landing-template/package.json": {
+    "mtime": 1782829955.4138026,
+    "ast_hash": "b7378588db50c9a8d854445fa18cafb2",
+    "semantic_hash": "b7378588db50c9a8d854445fa18cafb2"
+  },
+  "/home/rakshitbhai/generalize-landing-template/scripts/seed.ts": {
+    "mtime": 1782820558.822187,
+    "ast_hash": "40f69f47b0261db2655eb0ad6383e852",
+    "semantic_hash": "40f69f47b0261db2655eb0ad6383e852"
+  },
+  "/home/rakshitbhai/generalize-landing-template/scripts/test-security.ts": {
+    "mtime": 1782823601.833913,
+    "ast_hash": "3ecf180799e5fe2e3c09ac54729489be",
+    "semantic_hash": "3ecf180799e5fe2e3c09ac54729489be"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/app.d.ts": {
+    "mtime": 1782820685.5284944,
+    "ast_hash": "937722b7036fed50f9018211671e55b1",
+    "semantic_hash": "937722b7036fed50f9018211671e55b1"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/hooks.server.ts": {
+    "mtime": 1782827903.4405985,
+    "ast_hash": "2c757d47f6759438bd3a4ab8613c2986",
+    "semantic_hash": "2c757d47f6759438bd3a4ab8613c2986"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/FloatingWhatsApp.svelte": {
+    "mtime": 1782845242.9088047,
+    "ast_hash": "09fc45a8b1c53573529a19fe9aa7963c",
+    "semantic_hash": "09fc45a8b1c53573529a19fe9aa7963c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/AboutPreview.svelte": {
+    "mtime": 1782820875.989453,
+    "ast_hash": "3d55314d4293161927cbb27c8e62285e",
+    "semantic_hash": "3d55314d4293161927cbb27c8e62285e"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/ContactCta.svelte": {
+    "mtime": 1782820898.6643293,
+    "ast_hash": "01f6e6d4c30bef62006cb4e6eec5a831",
+    "semantic_hash": "01f6e6d4c30bef62006cb4e6eec5a831"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/FaqPreview.svelte": {
+    "mtime": 1782820896.328342,
+    "ast_hash": "5bae7c784bade76046ef8d7e25c07915",
+    "semantic_hash": "5bae7c784bade76046ef8d7e25c07915"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/FeaturedProjects.svelte": {
+    "mtime": 1782820889.2633805,
+    "ast_hash": "6c7a47bafe782cf4cc4e5b674db8505a",
+    "semantic_hash": "6c7a47bafe782cf4cc4e5b674db8505a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/Footer.svelte": {
+    "mtime": 1782820862.0655293,
+    "ast_hash": "55961c86cbfabab1406afa44f8b52b86",
+    "semantic_hash": "55961c86cbfabab1406afa44f8b52b86"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/Hero.svelte": {
+    "mtime": 1782820871.443478,
+    "ast_hash": "0f4690e26780ac662800c9761bfe9538",
+    "semantic_hash": "0f4690e26780ac662800c9761bfe9538"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/Nav.svelte": {
+    "mtime": 1782820856.0405622,
+    "ast_hash": "0d9d8f92db2fe671fe11954c4a3569e9",
+    "semantic_hash": "0d9d8f92db2fe671fe11954c4a3569e9"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/Services.svelte": {
+    "mtime": 1782842312.6447997,
+    "ast_hash": "b73a6ee11fa5a961a6793bb37b5b96c6",
+    "semantic_hash": "b73a6ee11fa5a961a6793bb37b5b96c6"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/components/sections/Testimonials.svelte": {
+    "mtime": 1782820893.4993575,
+    "ast_hash": "0acbfd7195623ac16ed2f4d27f9d0f0a",
+    "semantic_hash": "0acbfd7195623ac16ed2f4d27f9d0f0a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/config/site.config.ts": {
+    "mtime": 1782845222.7159076,
+    "ast_hash": "4116a22028830033441af1c150bb03de",
+    "semantic_hash": "4116a22028830033441af1c150bb03de"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/index.ts": {
+    "mtime": 1782820377.4558246,
+    "ast_hash": "ffcb0e97b69eb555d5739e9efe961ca0",
+    "semantic_hash": "ffcb0e97b69eb555d5739e9efe961ca0"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/auth/auth.ts": {
+    "mtime": 1782820512.1404421,
+    "ast_hash": "d2eb61cbd822bcad9ef9a3cf49cacee7",
+    "semantic_hash": "d2eb61cbd822bcad9ef9a3cf49cacee7"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/db/client.ts": {
+    "mtime": 1782820517.302414,
+    "ast_hash": "31c732082ce4c4d3329bc5519769c582",
+    "semantic_hash": "31c732082ce4c4d3329bc5519769c582"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/db/index.ts": {
+    "mtime": 1782820377.5321782,
+    "ast_hash": "2e1b770ae7e8cd566d23a8009e6df8e8",
+    "semantic_hash": "2e1b770ae7e8cd566d23a8009e6df8e8"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/db/rateLimit.ts": {
+    "mtime": 1782820636.6677616,
+    "ast_hash": "327b46a823117c7edd8e173a924383d0",
+    "semantic_hash": "327b46a823117c7edd8e173a924383d0"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/db/schema.ts": {
+    "mtime": 1782845214.3689501,
+    "ast_hash": "8b7b9c4af74828f5dd19445d3bdd001d",
+    "semantic_hash": "8b7b9c4af74828f5dd19445d3bdd001d"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/email/zeptomail.ts": {
+    "mtime": 1782821142.3799968,
+    "ast_hash": "787219f8cf6dcac260748517d709807c",
+    "semantic_hash": "787219f8cf6dcac260748517d709807c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/r2/upload.ts": {
+    "mtime": 1782820700.5224123,
+    "ast_hash": "27a27741f1dc644ed91da6523b1d9e0b",
+    "semantic_hash": "27a27741f1dc644ed91da6523b1d9e0b"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/server/webpush.ts": {
+    "mtime": 1782842536.6756516,
+    "ast_hash": "15bfa1875ea14f8fa5877251bb27a244",
+    "semantic_hash": "15bfa1875ea14f8fa5877251bb27a244"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/video.ts": {
+    "mtime": 1782835602.6472495,
+    "ast_hash": "02e16ef110ca6c014061135c6112a3a6",
+    "semantic_hash": "02e16ef110ca6c014061135c6112a3a6"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/+layout.server.ts": {
+    "mtime": 1782827028.8895528,
+    "ast_hash": "622be91a796cf4db1d307c47e19ed2c8",
+    "semantic_hash": "622be91a796cf4db1d307c47e19ed2c8"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/+layout.svelte": {
+    "mtime": 1782845249.65877,
+    "ast_hash": "ce51a3af4a02ecbed724872e02af3213",
+    "semantic_hash": "ce51a3af4a02ecbed724872e02af3213"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/+page.server.ts": {
+    "mtime": 1782822158.848493,
+    "ast_hash": "73ff04f721ed6c32d52c04c9ae8c566f",
+    "semantic_hash": "73ff04f721ed6c32d52c04c9ae8c566f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/+page.svelte": {
+    "mtime": 1782820983.9058633,
+    "ast_hash": "8270900644a44140ec2a5799a8c16af6",
+    "semantic_hash": "8270900644a44140ec2a5799a8c16af6"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/about/+page.server.ts": {
+    "mtime": 1782827076.9983413,
+    "ast_hash": "e42c872be75f861e313cc1948c8b5974",
+    "semantic_hash": "e42c872be75f861e313cc1948c8b5974"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/about/+page.svelte": {
+    "mtime": 1782822246.8140192,
+    "ast_hash": "751fac97fff081afbd9402e198185a7f",
+    "semantic_hash": "751fac97fff081afbd9402e198185a7f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/+layout.server.ts": {
+    "mtime": 1782820720.4273036,
+    "ast_hash": "b5875f0751ab5d4e6f0d91bee88f548e",
+    "semantic_hash": "b5875f0751ab5d4e6f0d91bee88f548e"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/+layout.svelte": {
+    "mtime": 1782826997.0906925,
+    "ast_hash": "ed6abded4fa0a39a81056c6df73c6116",
+    "semantic_hash": "ed6abded4fa0a39a81056c6df73c6116"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/company/+page.server.ts": {
+    "mtime": 1782845266.147686,
+    "ast_hash": "77b790e1544aeccdb8ff635d2fef1d00",
+    "semantic_hash": "77b790e1544aeccdb8ff635d2fef1d00"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/company/+page.svelte": {
+    "mtime": 1782845277.8066266,
+    "ast_hash": "df6de5d6a2f3ad865431d5794b1378b0",
+    "semantic_hash": "df6de5d6a2f3ad865431d5794b1378b0"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/dashboard/+page.server.ts": {
+    "mtime": 1782842415.8982706,
+    "ast_hash": "b6148d0b786e08871357df72b41db7cc",
+    "semantic_hash": "b6148d0b786e08871357df72b41db7cc"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/dashboard/+page.svelte": {
+    "mtime": 1782842441.9021373,
+    "ast_hash": "404b44bd6ee76a72e576302d60cfad4e",
+    "semantic_hash": "404b44bd6ee76a72e576302d60cfad4e"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/faq/+page.server.ts": {
+    "mtime": 1782820821.7117498,
+    "ast_hash": "67078b4445006488213a271b2c7bb679",
+    "semantic_hash": "67078b4445006488213a271b2c7bb679"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/faq/+page.svelte": {
+    "mtime": 1782820827.0987203,
+    "ast_hash": "2a47c1a3dc395df4c527a3ca673aae19",
+    "semantic_hash": "2a47c1a3dc395df4c527a3ca673aae19"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/gallery/+page.server.ts": {
+    "mtime": 1782820803.4358497,
+    "ast_hash": "88b23cc867dfe561285cbe3aeaf9bfb5",
+    "semantic_hash": "88b23cc867dfe561285cbe3aeaf9bfb5"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/gallery/+page.svelte": {
+    "mtime": 1782820808.0678244,
+    "ast_hash": "8a2fd8b3c00c8b4ed245de92fc050b7c",
+    "semantic_hash": "8a2fd8b3c00c8b4ed245de92fc050b7c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/login/+page.server.ts": {
+    "mtime": 1782830870.4464917,
+    "ast_hash": "647bef7fcab6574173db5ae9eb30b210",
+    "semantic_hash": "647bef7fcab6574173db5ae9eb30b210"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/login/+page.svelte": {
+    "mtime": 1782820743.8801754,
+    "ast_hash": "32b2d3ffca00905aa283c34a41cbb106",
+    "semantic_hash": "32b2d3ffca00905aa283c34a41cbb106"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/logout/+server.ts": {
+    "mtime": 1782820753.5421226,
+    "ast_hash": "778f9004e93654ccd2969e1d06045e16",
+    "semantic_hash": "778f9004e93654ccd2969e1d06045e16"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/messages/+page.server.ts": {
+    "mtime": 1782820832.9786882,
+    "ast_hash": "00e4bfe8549037befa93093cfd68332a",
+    "semantic_hash": "00e4bfe8549037befa93093cfd68332a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/messages/+page.svelte": {
+    "mtime": 1782820838.8306563,
+    "ast_hash": "5d7ae4fe0f7319b5b765b45cae529b92",
+    "semantic_hash": "5d7ae4fe0f7319b5b765b45cae529b92"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/projects/+page.server.ts": {
+    "mtime": 1782835647.5600188,
+    "ast_hash": "e99c9e7accabfe171496a7b18a1e7c4a",
+    "semantic_hash": "e99c9e7accabfe171496a7b18a1e7c4a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/projects/+page.svelte": {
+    "mtime": 1782835723.0416312,
+    "ast_hash": "c73eb79d3930a19ecda786b09b27caae",
+    "semantic_hash": "c73eb79d3930a19ecda786b09b27caae"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/push/+server.ts": {
+    "mtime": 1782842546.2976022,
+    "ast_hash": "04269799a215235aa1e923570c8e0691",
+    "semantic_hash": "04269799a215235aa1e923570c8e0691"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/services/+page.server.ts": {
+    "mtime": 1782820779.0219831,
+    "ast_hash": "0aae0e9ae8eabb9ec5ac3ee15c598909",
+    "semantic_hash": "0aae0e9ae8eabb9ec5ac3ee15c598909"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/services/+page.svelte": {
+    "mtime": 1782820784.9749508,
+    "ast_hash": "f61342822b5fff04ea1a494e4677b80c",
+    "semantic_hash": "f61342822b5fff04ea1a494e4677b80c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/testimonials/+page.server.ts": {
+    "mtime": 1782820811.5298054,
+    "ast_hash": "1540e979add5e5df996985c840f86eee",
+    "semantic_hash": "1540e979add5e5df996985c840f86eee"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/admin/testimonials/+page.svelte": {
+    "mtime": 1782820817.4217732,
+    "ast_hash": "56786ef23a986d2a5089b9bb30ffe5e1",
+    "semantic_hash": "56786ef23a986d2a5089b9bb30ffe5e1"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/contact/+page.server.ts": {
+    "mtime": 1782845228.15688,
+    "ast_hash": "14cd023ea1c7eb437f34289376c0881f",
+    "semantic_hash": "14cd023ea1c7eb437f34289376c0881f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/contact/+page.svelte": {
+    "mtime": 1782845235.8818405,
+    "ast_hash": "50eb445963923019425581a0c661a6d5",
+    "semantic_hash": "50eb445963923019425581a0c661a6d5"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/faqs/+page.server.ts": {
+    "mtime": 1782822197.845283,
+    "ast_hash": "437de0c8326807fbc78f66738d81951b",
+    "semantic_hash": "437de0c8326807fbc78f66738d81951b"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/faqs/+page.svelte": {
+    "mtime": 1782822239.3930593,
+    "ast_hash": "3c8b94c0902fa9d68a9f1556706d4d13",
+    "semantic_hash": "3c8b94c0902fa9d68a9f1556706d4d13"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/gallery/+page.server.ts": {
+    "mtime": 1782822184.315356,
+    "ast_hash": "6a219a52eb6264ef4704b170ac3f3367",
+    "semantic_hash": "6a219a52eb6264ef4704b170ac3f3367"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/gallery/+page.svelte": {
+    "mtime": 1782822218.84117,
+    "ast_hash": "8871d61c0475ba77d428039fdf4b75a8",
+    "semantic_hash": "8871d61c0475ba77d428039fdf4b75a8"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/images/%5B...key%5D/+server.ts": {
+    "mtime": 1782820704.1583924,
+    "ast_hash": "29fac2bcf106568159134a1afc720c2c",
+    "semantic_hash": "29fac2bcf106568159134a1afc720c2c"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/privacy/+page.server.ts": {
+    "mtime": 1782827081.0223238,
+    "ast_hash": "e42c872be75f861e313cc1948c8b5974",
+    "semantic_hash": "e42c872be75f861e313cc1948c8b5974"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/privacy/+page.svelte": {
+    "mtime": 1782822252.844987,
+    "ast_hash": "9f724cec6e3ae9d26eaf9c20ae31973d",
+    "semantic_hash": "9f724cec6e3ae9d26eaf9c20ae31973d"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/%5Bslug%5D/+page.server.ts": {
+    "mtime": 1782822179.4343822,
+    "ast_hash": "b7d0a049c339f0b45ab51af6f7d24389",
+    "semantic_hash": "b7d0a049c339f0b45ab51af6f7d24389"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/%5Bslug%5D/+page.svelte": {
+    "mtime": 1782822209.378221,
+    "ast_hash": "a824c669291a0f21d7a35ca9aff6b5df",
+    "semantic_hash": "a824c669291a0f21d7a35ca9aff6b5df"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/+page.server.ts": {
+    "mtime": 1782822169.7504344,
+    "ast_hash": "8b54f4716cdd3445c446d204fc4addc9",
+    "semantic_hash": "8b54f4716cdd3445c446d204fc4addc9"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/+page.svelte": {
+    "mtime": 1782822203.5802522,
+    "ast_hash": "c109cb17fb8c8da9fe4012e906a6f393",
+    "semantic_hash": "c109cb17fb8c8da9fe4012e906a6f393"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/[slug]/+page.server.ts": {
+    "mtime": 1782835735.5655668,
+    "ast_hash": "0dbeb43c5e2c50037fba622b7d518dca",
+    "semantic_hash": "0dbeb43c5e2c50037fba622b7d518dca"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/projects/[slug]/+page.svelte": {
+    "mtime": 1782842323.3617446,
+    "ast_hash": "0eae0e8ad49ef042b28f36ce8a1164b3",
+    "semantic_hash": "0eae0e8ad49ef042b28f36ce8a1164b3"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/robots.txt/+server.ts": {
+    "mtime": 1782821167.6338587,
+    "ast_hash": "6fb94bebfa3206c80a2dd566fff0665f",
+    "semantic_hash": "6fb94bebfa3206c80a2dd566fff0665f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/services/+page.server.ts": {
+    "mtime": 1782822164.809461,
+    "ast_hash": "a1eb5b2100b57f33eb5e2b148cf13886",
+    "semantic_hash": "a1eb5b2100b57f33eb5e2b148cf13886"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/services/+page.svelte": {
+    "mtime": 1782842319.004767,
+    "ast_hash": "701b6ec177dd7e857a166b5444d00e5a",
+    "semantic_hash": "701b6ec177dd7e857a166b5444d00e5a"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/sitemap.xml/+server.ts": {
+    "mtime": 1782821173.1498287,
+    "ast_hash": "3e7a366e5732c5655d76f40b91a9e869",
+    "semantic_hash": "3e7a366e5732c5655d76f40b91a9e869"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/terms/+page.server.ts": {
+    "mtime": 1782827087.1482968,
+    "ast_hash": "e42c872be75f861e313cc1948c8b5974",
+    "semantic_hash": "e42c872be75f861e313cc1948c8b5974"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/terms/+page.svelte": {
+    "mtime": 1782822257.6349611,
+    "ast_hash": "28025eb9b05235a2bda60924bef5adbc",
+    "semantic_hash": "28025eb9b05235a2bda60924bef5adbc"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/testimonials/+page.server.ts": {
+    "mtime": 1782822191.926315,
+    "ast_hash": "72fa380394cbfdfdb6358648a25feac2",
+    "semantic_hash": "72fa380394cbfdfdb6358648a25feac2"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/routes/testimonials/+page.svelte": {
+    "mtime": 1782822234.3530865,
+    "ast_hash": "403629a9da1bdf1a36b0e2fd44959aab",
+    "semantic_hash": "403629a9da1bdf1a36b0e2fd44959aab"
+  },
+  "/home/rakshitbhai/generalize-landing-template/static/sw.js": {
+    "mtime": 1782842372.9974904,
+    "ast_hash": "819b07052f6bf686bae60e7f053c7dc6",
+    "semantic_hash": "819b07052f6bf686bae60e7f053c7dc6"
+  },
+  "/home/rakshitbhai/generalize-landing-template/svelte.config.js": {
+    "mtime": 1782835797.8832467,
+    "ast_hash": "255c217cd27510da1a1d10f96c3e4637",
+    "semantic_hash": "255c217cd27510da1a1d10f96c3e4637"
+  },
+  "/home/rakshitbhai/generalize-landing-template/tsconfig.json": {
+    "mtime": 1782820445.1108086,
+    "ast_hash": "546902c64172592f37f7a7ed0d1aad2f",
+    "semantic_hash": "546902c64172592f37f7a7ed0d1aad2f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/vite.config.ts": {
+    "mtime": 1782824404.4497342,
+    "ast_hash": "755d8472a05a1a156329694fdba450b7",
+    "semantic_hash": "755d8472a05a1a156329694fdba450b7"
+  },
+  "/home/rakshitbhai/generalize-landing-template/worker-configuration.d.ts": {
+    "mtime": 1782826971.907803,
+    "ast_hash": "7179ba64f8c24ab9e5660da48181173b",
+    "semantic_hash": "7179ba64f8c24ab9e5660da48181173b"
+  },
+  "/home/rakshitbhai/generalize-landing-template/.agents/rules/graphify.md": {
+    "mtime": 1782819698.9547071,
+    "ast_hash": "f1e53ecc9194573d3c28fc116c743a2e",
+    "semantic_hash": "f1e53ecc9194573d3c28fc116c743a2e"
+  },
+  "/home/rakshitbhai/generalize-landing-template/.agents/workflows/graphify.md": {
+    "mtime": 1782819698.9549026,
+    "ast_hash": "0bc020d491fca99550c1ea3de0a5f862",
+    "semantic_hash": "0bc020d491fca99550c1ea3de0a5f862"
+  },
+  "/home/rakshitbhai/generalize-landing-template/AGENTS.md": {
+    "mtime": 1782883920.080788,
+    "ast_hash": "8975fba96c71014f2bf4f4082bc56dda",
+    "semantic_hash": "8975fba96c71014f2bf4f4082bc56dda"
+  },
+  "/home/rakshitbhai/generalize-landing-template/CLAUDE.md": {
+    "mtime": 1782883924.0127492,
+    "ast_hash": "8975fba96c71014f2bf4f4082bc56dda",
+    "semantic_hash": "8975fba96c71014f2bf4f4082bc56dda"
+  },
+  "/home/rakshitbhai/generalize-landing-template/README.md": {
+    "mtime": 1782829977.4616995,
+    "ast_hash": "a017a5822536c3f153a3d5824bebd9fe",
+    "semantic_hash": "a017a5822536c3f153a3d5824bebd9fe"
+  },
+  "/home/rakshitbhai/generalize-landing-template/docs/DEFINITION_OF_DONE.md": {
+    "mtime": 1782883916.4438236,
+    "ast_hash": "2acb7dd749d2949a703671cce223ef5f",
+    "semantic_hash": "2acb7dd749d2949a703671cce223ef5f"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/app.html": {
+    "mtime": 1782820377.4551325,
+    "ast_hash": "8b7e1c7d0965b682b68ec4d4bb98d6bf",
+    "semantic_hash": "8b7e1c7d0965b682b68ec4d4bb98d6bf"
+  },
+  "/home/rakshitbhai/generalize-landing-template/static/robots.txt": {
+    "mtime": 1782820377.4558246,
+    "ast_hash": "d2ab914a1820906bd49451cb0a108119",
+    "semantic_hash": "d2ab914a1820906bd49451cb0a108119"
+  },
+  "/home/rakshitbhai/generalize-landing-template/src/lib/assets/favicon.svg": {
+    "mtime": 1782820377.4556332,
+    "ast_hash": "a0d1b540c1b9a2a920d5f6cae983118a",
+    "semantic_hash": "a0d1b540c1b9a2a920d5f6cae983118a"
   }
 }
