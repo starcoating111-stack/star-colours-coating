@@ -121,6 +121,21 @@ export const admin = sqliteTable('admin', {
   updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).default(sql`(strftime('%s', 'now') * 1000)`)
 });
 
+// team_members
+export const teamMembers = sqliteTable('team_members', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  name: text('name').notNull(),
+  designation: text('designation').notNull(),
+  bio: text('bio'),
+  photoUrl: text('photo_url'),
+  email: text('email'),
+  linkedinUrl: text('linkedin_url'),
+  sortOrder: integer('sort_order').notNull().default(0),
+  isActive: integer('is_active', { mode: 'boolean' }).notNull().default(true),
+  createdAt: integer('created_at', { mode: 'timestamp_ms' }).default(sql`(strftime('%s', 'now') * 1000)`),
+  updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).default(sql`(strftime('%s', 'now') * 1000)`)
+});
+
 // push_subscriptions (admin browser push, one row per subscribed device)
 export const pushSubscriptions = sqliteTable('push_subscriptions', {
   id: integer('id').primaryKey({ autoIncrement: true }),

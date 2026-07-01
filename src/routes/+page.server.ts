@@ -1,7 +1,8 @@
 import type { PageServerLoad } from './$types';
 import { getDb } from '$lib/server/db/client';
-import { services, projects, testimonials, faq } from '$lib/server/db/schema';
+import { services, projects, testimonials, faq, teamMembers } from '$lib/server/db/schema';
 import { eq, asc } from 'drizzle-orm';
+import { siteConfig } from '$lib/config/site.config';
 
 export const load: PageServerLoad = async ({ platform, setHeaders }) => {
   setHeaders({
@@ -15,11 +16,16 @@ export const load: PageServerLoad = async ({ platform, setHeaders }) => {
     const testimonialsList = await db.select().from(testimonials).where(eq(testimonials.isFeatured, true)).orderBy(asc(testimonials.sortOrder)).limit(3);
     const faqsList = await db.select().from(faq).orderBy(asc(faq.sortOrder)).limit(4);
 
+    const teamList = siteConfig.homepageModules.includes('teamPreview')
+      ? await db.select().from(teamMembers).where(eq(teamMembers.isActive, true)).orderBy(asc(teamMembers.sortOrder))
+      : [];
+
     return {
       services: servicesList,
       projects: projectsList,
       testimonials: testimonialsList,
-      faqs: faqsList
+      faqs: faqsList,
+      teamMembers: teamList
     };
   } catch (err) {
     console.error('Error loading homepage server data:', err);
@@ -27,7 +33,8 @@ export const load: PageServerLoad = async ({ platform, setHeaders }) => {
       services: [],
       projects: [],
       testimonials: [],
-      faqs: []
+      faqs: [],
+      teamMembers: []
     };
   }
 };

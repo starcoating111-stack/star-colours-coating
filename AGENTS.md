@@ -13,6 +13,13 @@ This project is a self-contained SvelteKit web application designed for Cloudfla
 - **Storage**: Cloudflare R2 bucket for uploads/assets. Image proxy endpoint serves cached images from R2 (`src/routes/images/[...key]`).
 - **Emails**: Zoho ZeptoMail API for transactional emails (e.g., contact form submissions).
 - **Security**: Signed admin sessions, strict Content Security Policy (CSP) with script nonces (`src/hooks.server.ts`), Honeypot spam defense, and rate-limiting.
+- **Team module**: `team_members` table (name, designation, bio, photo_url R2 key,
+  email, linkedin_url, sort_order, is_active). Admin CRUD at `/admin/team` with inline
+  active toggle. Public `/team` page (active-only filter at query level, initials
+  fallback if no photo, email/LinkedIn only render if populated). `TeamPreview`
+  homepage section — disabled by default in `homepageModules`, conditional D1 fetch
+  (only queries if `'teamPreview'` is in the active module list). `/team` in sitemap
+  at priority 0.7. LinkedIn URL validated server-side (must be linkedin.com/in/).
 
 ## 2. Structural & Architectural Off-Limits
 - **No arbitrary page-builder abstractions**: Do not turn this template into a page-builder with dynamic complex layout JSONs. Keep sections flat, modular, and defined within `src/lib/components/sections/` and configured via `siteConfig.homepageModules` in `src/lib/config/site.config.ts`.

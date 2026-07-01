@@ -13,6 +13,7 @@ This is the checklist that must be fully completed and verified before any code 
 
 ## 3. Security & CSP
 - [ ] **CSP Verification**: Ensure that the Content Security Policy (CSP) is not broken by new code. Check the console for CSP violation reports.
+- [ ] **Visibility guardrail**: `is_active` filtering for team members (and any future toggle-based visibility) must happen at the D1 query level (`where(eq(...isActive, true))`), never in the component. Component-level filtering means inactive data still transfers over the wire.
 - [ ] **Secrets leakage**: Ensure no secrets, tokens, or private credentials are hardcoded. All credentials must be read from environment variables or `.dev.vars`.
 
 ## 4. Code Quality & Formatting

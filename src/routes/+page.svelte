@@ -7,6 +7,7 @@
   import Testimonials from '$lib/components/sections/Testimonials.svelte';
   import FaqPreview from '$lib/components/sections/FaqPreview.svelte';
   import ContactCta from '$lib/components/sections/ContactCta.svelte';
+  import TeamPreview from '$lib/components/sections/TeamPreview.svelte';
 
   let { data } = $props<{
     data: {
@@ -15,6 +16,7 @@
       projects: any[];
       testimonials: any[];
       faqs: any[];
+      teamMembers: any[];
     };
   }>();
 </script>
@@ -70,6 +72,10 @@
               {:else}
                 {#if module === 'contactCta'}
                   <ContactCta settings={data.settings} />
+                {:else}
+                  {#if module === 'teamPreview'}
+                    <TeamPreview teamMembers={data.teamMembers} />
+                  {/if}
                 {/if}
               {/if}
             {/if}

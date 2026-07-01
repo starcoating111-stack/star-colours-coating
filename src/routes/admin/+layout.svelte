@@ -12,6 +12,7 @@
     { name: 'Services Offered', path: '/admin/services', icon: 'Briefcase' },
     { name: 'Projects / Portfolio', path: '/admin/projects', icon: 'FolderGit' },
     { name: 'Media Gallery', path: '/admin/gallery', icon: 'Image' },
+    { name: 'Team Members', path: '/admin/team', icon: 'Users' },
     { name: 'Testimonials', path: '/admin/testimonials', icon: 'MessageSquareStar' },
     { name: 'FAQs', path: '/admin/faq', icon: 'HelpCircle' },
     { name: 'Form Submissions', path: '/admin/messages', icon: 'Mail' }

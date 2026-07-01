@@ -23,6 +23,7 @@ export const GET: RequestHandler = async ({ url, platform }) => {
     { path: '/services', priority: '0.8' },
     { path: '/projects', priority: '0.8' },
     { path: '/gallery', priority: '0.6' },
+    { path: '/team', priority: '0.7' },
     { path: '/testimonials', priority: '0.6' },
     { path: '/faqs', priority: '0.5' },
     { path: '/contact', priority: '0.9' },
