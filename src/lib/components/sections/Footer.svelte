@@ -39,7 +39,7 @@
         <img
           src={logoSrc}
           alt={settings.companyName}
-          class="w-8 h-8 rounded-lg bg-white p-1 object-contain"
+          class="h-9 w-auto max-w-[44px] object-contain"
         />
         <span class="font-bold text-white text-base tracking-tight">
           {settings.companyName}

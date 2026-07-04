@@ -35,7 +35,7 @@
       <img
         src={logoSrc}
         alt={settings.companyName}
-        class="w-9 h-9 rounded-lg bg-white p-1 object-contain transition-transform group-hover:scale-105"
+        class="h-10 w-auto max-w-[48px] object-contain transition-transform group-hover:scale-105 drop-shadow-sm"
       />
       <span class="font-bold text-white text-lg tracking-tight group-hover:text-zinc-200 transition-colors">
         {settings.companyName}

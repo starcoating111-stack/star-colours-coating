@@ -42,7 +42,7 @@
           <img
             src={logoSrc}
             alt={data.companyName ?? 'Admin'}
-            class="w-8 h-8 rounded-lg bg-white p-1 object-contain"
+            class="h-8 w-auto max-w-[40px] object-contain"
           />
           <div>
             <h2 class="font-bold text-sm text-white leading-none">Console</h2>
