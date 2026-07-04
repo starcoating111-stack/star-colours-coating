@@ -1,6 +1,10 @@
 # Required secrets (copy to .dev.vars for local development)
 # HMAC key for admin session signatures, minimum 32 bytes of high entropy
-ADMIN_SESSION_SECRET="DEVELOPMENT_SESSION_SECRET_CHANGE_THIS_IN_PRODUCTION"
+
+ADMIN_SESSION_SECRET="45ebc9fe5bf07a4760827445da1b9d040cd1d26470008fd1337a64d644b8fe19"
+VAPID_PUBLIC_KEY=BLQiT3XVJIBTuTipmxHYJS7VeccYYgbDLIbcNrJQxy7ay1lpgKm1B6sjkAdITJYG_YxYUNnwqzMwRncfqeFGeCI
+VAPID_PRIVATE_KEY_JWK={"key_ops":["sign"],"ext":true,"kty":"EC","x":"tCJPddUkgFO5OKmbEdglLtV5xxhiBsMshtw2slDHLto","y":"y1lpgKm1B6sjkAdITJYG_YxYUNnwqzMwRncfqeFGeCI","crv":"P-256","d":"lEq0nd1HuLR14bCOh3JdOTLQevmN0nC3Usbclsd9R5E"}
+VAPID_SUBJECT="mailto:starcoating111@gmail.com"
 
 # Zoho ZeptoMail API Token
 ZEPTOMAIL_API_KEY="your_zeptomail_api_token"
@@ -19,4 +23,3 @@ ZEPTOMAIL_BOUNCE_EMAIL="bounce@bounce.yourdomain.com"
 VAPID_PUBLIC_KEY="base64url-encoded-uncompressed-P256-public-key"
 VAPID_PRIVATE_KEY_JWK='{"kty":"EC","crv":"P-256","d":"...","x":"...","y":"..."}'
 # Use mailto: or an https: URL — required by Web Push spec
-VAPID_SUBJECT="mailto:admin@yourdomain.com"
