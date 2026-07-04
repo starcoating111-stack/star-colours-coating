@@ -1,10 +1,19 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import starLogo from '$lib/assets/star-logo.png';
 
   let { data, children } = $props<{
-    data: { isAdmin: boolean; companyName?: string };
+    data: { isAdmin: boolean; companyName?: string; logoUrl?: string | null };
     children: any;
   }>();
+
+  let logoSrc = $derived.by(() => {
+    if (!data.logoUrl) return starLogo;
+    if (data.logoUrl.startsWith('http://') || data.logoUrl.startsWith('https://') || data.logoUrl.startsWith('/')) {
+      return data.logoUrl;
+    }
+    return `/images/${data.logoUrl}`;
+  });
 
   const navigation = [
     { name: 'Dashboard', path: '/admin/dashboard', icon: 'LayoutDashboard' },
@@ -30,9 +39,11 @@
       <!-- Sidebar Header -->
       <div class="p-6 border-b border-zinc-900 flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-white text-zinc-950 flex items-center justify-center font-bold text-sm">
-            A
-          </div>
+          <img
+            src={logoSrc}
+            alt={data.companyName ?? 'Admin'}
+            class="w-8 h-8 rounded-lg bg-white p-1 object-contain"
+          />
           <div>
             <h2 class="font-bold text-sm text-white leading-none">Console</h2>
             <span class="text-[10px] text-zinc-500 uppercase tracking-wider">Administrator</span>

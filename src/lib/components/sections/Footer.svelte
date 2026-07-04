@@ -1,7 +1,10 @@
 <script lang="ts">
+  import starLogo from '$lib/assets/star-logo.png';
+
   let { settings } = $props<{
     settings: {
       companyName: string;
+      logoUrl?: string | null;
       tagline?: string | null;
       phone?: string | null;
       email?: string | null;
@@ -17,6 +20,14 @@
     };
   }>();
 
+  let logoSrc = $derived.by(() => {
+    if (!settings?.logoUrl) return starLogo;
+    if (settings.logoUrl.startsWith('http://') || settings.logoUrl.startsWith('https://') || settings.logoUrl.startsWith('/')) {
+      return settings.logoUrl;
+    }
+    return `/images/${settings.logoUrl}`;
+  });
+
   const currentYear = new Date().getFullYear();
 </script>
 
@@ -25,9 +36,11 @@
     <!-- Branding -->
     <div class="space-y-4">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-white text-zinc-950 flex items-center justify-center font-bold text-sm">
-          C
-        </div>
+        <img
+          src={logoSrc}
+          alt={settings.companyName}
+          class="w-8 h-8 rounded-lg bg-white p-1 object-contain"
+        />
         <span class="font-bold text-white text-base tracking-tight">
           {settings.companyName}
         </span>

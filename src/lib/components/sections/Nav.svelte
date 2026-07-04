@@ -1,9 +1,19 @@
 <script lang="ts">
+  import starLogo from '$lib/assets/star-logo.png';
+
   let { settings } = $props<{
     settings: { companyName: string; logoUrl?: string | null };
   }>();
 
   let mobileOpen = $state(false);
+
+  let logoSrc = $derived.by(() => {
+    if (!settings?.logoUrl) return starLogo;
+    if (settings.logoUrl.startsWith('http://') || settings.logoUrl.startsWith('https://') || settings.logoUrl.startsWith('/')) {
+      return settings.logoUrl;
+    }
+    return `/images/${settings.logoUrl}`;
+  });
 
   const links = [
     { name: 'Home', href: '/' },
@@ -22,9 +32,11 @@
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     <!-- Brand / Logo -->
     <a href="/" class="flex items-center gap-3 group">
-      <div class="w-9 h-9 rounded-lg bg-white text-zinc-950 flex items-center justify-center font-bold text-base transition-transform group-hover:scale-105">
-        C
-      </div>
+      <img
+        src={logoSrc}
+        alt={settings.companyName}
+        class="w-9 h-9 rounded-lg bg-white p-1 object-contain transition-transform group-hover:scale-105"
+      />
       <span class="font-bold text-white text-lg tracking-tight group-hover:text-zinc-200 transition-colors">
         {settings.companyName}
       </span>
