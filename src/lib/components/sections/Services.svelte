@@ -1,50 +1,74 @@
 <script lang="ts">
-  let { services } = $props<{
-    services: Array<{ id: number; title: string; slug: string; description: string; imageUrl: string; icon?: string | null }>;
+  let { services = [] } = $props<{
+    services?: Array<{ id: number; title: string; slug: string; description: string; imageUrl: string; icon?: string | null }>;
   }>();
+
+  // Reference placeholders if DB is empty
+  const defaultServices = [
+    { id: 1, title: 'Luxury Painting!', imageUrl: '', slug: 'luxury-painting' },
+    { id: 2, title: 'Premium Color PU coating', imageUrl: '', slug: 'premium-pu' },
+    { id: 3, title: 'Polyester Lucido Lamination coating!', imageUrl: '', slug: 'polyester-lucido' },
+    { id: 4, title: 'Satin Metallic coatings!', imageUrl: 'satin_metallic.png', slug: 'satin-metallic' },
+    { id: 5, title: 'Luxury Texture Finish', imageUrl: '', slug: 'luxury-texture' }
+  ];
+
+  const displayServices = $derived(services.length > 0 ? services : defaultServices);
 </script>
 
-<section class="py-24 bg-zinc-950 px-6 border-t border-zinc-900 selection:bg-zinc-800 selection:text-white">
+<section id="services" class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white">
   <div class="max-w-7xl mx-auto space-y-16">
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="space-y-4">
-        <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Capabilities</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Structured Services</h2>
-      </div>
-      <a href="/services" class="text-xs font-semibold text-zinc-450 hover:text-white transition-colors">View All Services &rarr;</a>
+    <div class="text-center space-y-4 max-w-2xl mx-auto animate-fade-in-up">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit">
+        DISCOVER OUR SIGNATURE SERVICES
+      </h2>
+      <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light font-sans max-w-xl mx-auto">
+        Experience craftsmanship and innovation — from immersive visuals to unforgettable moments.
+      </p>
+      <div class="w-24 h-0.5 bg-brand-accent mx-auto mt-6"></div>
     </div>
 
-    <!-- Grid -->
-    {#if services.length === 0}
-      <div class="border border-dashed border-zinc-900 rounded-2xl p-12 text-center text-zinc-600 text-sm">
-        Services will appear here once populated in the admin dashboard.
-      </div>
-    {:else}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {#each services.slice(0, 6) as service}
-          <div class="group bg-zinc-900/10 border border-zinc-900 rounded-2xl overflow-hidden backdrop-blur flex flex-col justify-between h-full">
-            <div class="aspect-video w-full bg-zinc-950 overflow-hidden border-b border-zinc-900">
-              <img
-                src="/images/{service.imageUrl}"
-                alt={service.title}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6 flex-1 flex flex-col justify-between gap-4">
-              <div class="space-y-2">
-                <h3 class="font-bold text-lg text-white group-hover:text-zinc-200 transition-colors">{service.title}</h3>
-                <p class="text-xs text-zinc-400 leading-relaxed line-clamp-3">{service.description}</p>
+    <!-- Horizontal Scroll Track -->
+    <div class="relative w-full animate-fade-in-up delay-100">
+      <!-- Arrow guidance indicators on edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-brand-dark to-transparent pointer-events-none z-10"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-brand-dark to-transparent pointer-events-none z-10"></div>
+
+      <!-- Horizontal Scrollable Container -->
+      <div class="flex gap-6 overflow-x-auto pb-8 pt-4 px-4 no-scrollbar snap-x scroll-smooth">
+        {#each displayServices as service}
+          <a
+            href="/services#{service.slug}"
+            class="flex-shrink-0 w-[280px] sm:w-[320px] aspect-[3/4] bg-brand-card hover:bg-brand-card/90 border border-zinc-900 rounded-3xl overflow-hidden relative shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-brand-accent/30 group snap-center"
+          >
+            <!-- Background Image overlay if available -->
+            {#if service.imageUrl}
+              <div class="absolute inset-0 z-0">
+                <img
+                  src="/images/{service.imageUrl}"
+                  alt={service.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <!-- Gradient to read text at bottom -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent"></div>
               </div>
-              <div class="pt-2">
-                <a href="/services#{service.slug}" class="text-xs text-zinc-500 group-hover:text-white transition-colors flex items-center gap-1 font-semibold">
-                  Read specifications &rarr;
-                </a>
-              </div>
+            {:else}
+              <!-- Plain Dark/Gradient background for text-only cards -->
+              <div class="absolute inset-0 bg-gradient-to-b from-[#1c120f] to-[#0f0a08] z-0"></div>
+            {/if}
+
+            <!-- Content Container -->
+            <div class="absolute inset-0 z-10 p-6 flex flex-col justify-end items-center text-center">
+              <h3 class="text-brand-accent group-hover:text-white font-extrabold text-base sm:text-lg tracking-wide transition-colors font-outfit uppercase leading-snug">
+                {service.title}
+              </h3>
+              <span class="text-[9px] text-zinc-550 group-hover:text-brand-accent tracking-widest font-bold uppercase mt-2 font-outfit">
+                Explore Specs &rarr;
+              </span>
             </div>
-          </div>
+          </a>
         {/each}
       </div>
-    {/if}
+    </div>
   </div>
 </section>

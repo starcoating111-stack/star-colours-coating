@@ -8,6 +8,7 @@
   import FaqPreview from '$lib/components/sections/FaqPreview.svelte';
   import ContactCta from '$lib/components/sections/ContactCta.svelte';
   import TeamPreview from '$lib/components/sections/TeamPreview.svelte';
+  import Transformations from '$lib/components/sections/Transformations.svelte';
 
   let { data } = $props<{
     data: {
@@ -54,34 +55,22 @@
   {#each siteConfig.homepageModules as module}
     {#if module === 'hero'}
       <Hero settings={data.settings} />
-    {:else}
-      {#if module === 'aboutPreview'}
-        <AboutPreview settings={data.settings} />
-      {:else}
-        {#if module === 'services'}
-          <Services services={data.services} />
-        {:else}
-          {#if module === 'featuredProjects'}
-            <FeaturedProjects projects={data.projects} />
-          {:else}
-            {#if module === 'testimonials'}
-              <Testimonials testimonials={data.testimonials} />
-            {:else}
-              {#if module === 'faqPreview'}
-                <FaqPreview faqs={data.faqs} />
-              {:else}
-                {#if module === 'contactCta'}
-                  <ContactCta settings={data.settings} />
-                {:else}
-                  {#if module === 'teamPreview'}
-                    <TeamPreview teamMembers={data.teamMembers} />
-                  {/if}
-                {/if}
-              {/if}
-            {/if}
-          {/if}
-        {/if}
-      {/if}
+    {:else if module === 'aboutPreview'}
+      <AboutPreview settings={data.settings} />
+    {:else if module === 'services'}
+      <Services services={data.services} />
+    {:else if module === 'featuredProjects'}
+      <FeaturedProjects projects={data.projects} />
+    {:else if module === 'testimonials'}
+      <Testimonials testimonials={data.testimonials} />
+    {:else if module === 'transformations'}
+      <Transformations />
+    {:else if module === 'faqPreview'}
+      <FaqPreview faqs={data.faqs} />
+    {:else if module === 'contactCta'}
+      <ContactCta settings={data.settings} />
+    {:else if module === 'teamPreview'}
+      <TeamPreview teamMembers={data.teamMembers} />
     {/if}
   {/each}
 </div>

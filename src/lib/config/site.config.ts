@@ -22,11 +22,11 @@ export const siteConfig: SiteConfig = {
   industryPreset: 'Web Development Agency', // e.g. 'Interior Design', 'Restaurant', etc.
   homepageModules: [
     'hero',
-    'aboutPreview',
     'services',
-    'featuredProjects',
     'testimonials',
-    'faqPreview',
+    'transformations',
+    'featuredProjects',
+    'teamPreview',
     'contactCta'
   ],
   seo: {

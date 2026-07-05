@@ -17,7 +17,7 @@
 {#if isAdminRoute}
   {@render children()}
 {:else}
-  <div class="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col font-sans selection:bg-zinc-800 selection:text-white">
+  <div class="min-h-screen bg-brand-dark text-zinc-100 flex flex-col font-sans selection:bg-zinc-800 selection:text-white">
     <Nav settings={data.settings} />
     <div class="flex-grow">
       {@render children()}

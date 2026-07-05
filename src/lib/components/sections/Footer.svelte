@@ -31,19 +31,16 @@
   const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="bg-zinc-950 border-t border-zinc-900 text-zinc-400 py-16 selection:bg-zinc-800 selection:text-white">
+<footer class="bg-[#180f0c] border-t border-zinc-900/60 text-zinc-450 py-16 selection:bg-zinc-800 selection:text-white font-sans">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
     <!-- Branding -->
     <div class="space-y-4">
-      <div class="flex items-center gap-3">
+      <div class="flex items-center">
         <img
           src={logoSrc}
           alt={settings.companyName}
-          class="h-9 w-auto max-w-[44px] object-contain"
+          class="h-10 sm:h-12 w-auto max-w-[180px] object-contain"
         />
-        <span class="font-bold text-white text-base tracking-tight">
-          {settings.companyName}
-        </span>
       </div>
       <p class="text-xs text-zinc-500 leading-relaxed">
         {settings.tagline ?? 'High-Performance Web Solutions.'}
@@ -102,8 +99,8 @@
     </div>
   </div>
 
-  <div class="max-w-7xl mx-auto px-6 border-t border-zinc-900 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-zinc-650">
-    <span>&copy; {currentYear} {settings.companyName}. All rights reserved.</span>
-    <span>Designed & Developed by <a href="https://codenxt.com" class="hover:text-zinc-500 underline transition-colors">CodeNXT Lab</a></span>
+  <div class="max-w-7xl mx-auto px-6 border-t border-zinc-900/40 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[10px] text-zinc-650">
+    <span>&copy; {currentYear} {settings.companyName || 'Star Colours Coating'}. All rights reserved.</span>
+    <span>Designed & Developed by <a href="https://codenxtlab.tech/" class="hover:text-zinc-500 underline transition-colors">CodeNXT Lab</a></span>
   </div>
 </footer>

@@ -1,50 +1,63 @@
 <script lang="ts">
-  let { projects } = $props<{
-    projects: Array<{ id: number; title: string; slug: string; category: string; location: string; coverImageUrl: string }>;
+  let { projects = [] } = $props<{
+    projects?: Array<{ id: number; title: string; slug: string; category: string; location: string; coverImageUrl: string }>;
   }>();
+
+  // Fallback defaults if DB is empty
+  const defaultProjects = [
+    { id: 1, title: "Modern Living Space", slug: "modern-living", category: "PU Coating", location: "Rourkela", coverImageUrl: "transform_after_1.jpg" },
+    { id: 2, title: "Elevator Corridor", slug: "corridor-door", category: "Satin Metallic", location: "Bhubaneswar", coverImageUrl: "satin_metallic.png" },
+    { id: 3, title: "Textured Plaster Wall", slug: "textured-wall", category: "Plaster Coating", location: "Cuttack", coverImageUrl: "placeholder_texture_1.png" },
+    { id: 4, title: "Luxury Accent Door", slug: "luxury-door", category: "Metallic Paint", location: "Sambalpur", coverImageUrl: "transform_after_2.jpg" },
+    { id: 5, title: "Wood Spray Finish", slug: "wood-finish", category: "PU Coating", location: "Puri", coverImageUrl: "placeholder_texture_4.png" }
+  ];
+
+  const list = $derived(projects.length > 0 ? projects : defaultProjects);
 </script>
 
-<section class="py-24 bg-zinc-950 px-6 border-t border-zinc-900 selection:bg-zinc-800 selection:text-white">
+<section id="portfolio" class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white">
   <div class="max-w-7xl mx-auto space-y-16">
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-      <div class="space-y-4">
-        <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Case Studies</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Featured Projects</h2>
-      </div>
-      <a href="/projects" class="text-xs font-semibold text-zinc-450 hover:text-white transition-colors">Browse Portfolio &rarr;</a>
+    <div class="text-center space-y-4 max-w-2xl mx-auto animate-fade-in-up">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit">
+        OUR PORTFOLIO
+      </h2>
+      <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light font-sans max-w-xl mx-auto">
+        Experience craftsmanship and innovation — from immersive visuals to unforgettable moments.
+      </p>
+      <div class="w-24 h-0.5 bg-brand-accent mx-auto mt-6"></div>
     </div>
 
-    <!-- Grid -->
-    {#if projects.length === 0}
-      <div class="border border-dashed border-zinc-900 rounded-2xl p-12 text-center text-zinc-600 text-sm">
-        Case studies will appear here once added in the admin dashboard.
+    <!-- Portfolio Grid -->
+    {#if list.length === 0}
+      <div class="border border-dashed border-zinc-900 rounded-2xl p-12 text-center text-zinc-650 text-sm font-sans animate-fade-in-up delay-100">
+        Projects will appear here once added in the dashboard.
       </div>
     {:else}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {#each projects.slice(0, 4) as project}
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up delay-100">
+        {#each list as project}
           <a
             href="/projects/{project.slug}"
-            class="group bg-zinc-900/10 border border-zinc-900 rounded-3xl overflow-hidden backdrop-blur flex flex-col justify-between hover:border-zinc-800 transition-colors"
+            class="group bg-zinc-950/20 border border-zinc-900/40 rounded-3xl overflow-hidden shadow-xl aspect-square relative block transition-all duration-500 hover:scale-[1.02] hover:border-brand-accent/20"
           >
-            <div class="aspect-[16/10] w-full bg-zinc-950 overflow-hidden relative border-b border-zinc-900">
-              <img
-                src="/images/{project.coverImageUrl}"
-                alt={project.title}
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              />
-              <span class="absolute top-4 left-4 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-zinc-950/70 border border-zinc-850 text-zinc-300 backdrop-blur">
+            <!-- Project Image -->
+            <img
+              src="/images/{project.coverImageUrl}"
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            <!-- Hover details overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+              <span class="text-[9px] font-bold text-brand-accent uppercase tracking-widest font-outfit mb-1">
                 {project.category}
               </span>
-            </div>
-            <div class="p-6 md:p-8 flex items-center justify-between gap-4">
-              <div>
-                <h3 class="font-bold text-lg md:text-xl text-white group-hover:text-zinc-200 transition-colors">{project.title}</h3>
-                <span class="text-xs text-zinc-500 mt-1 block">{project.location}</span>
-              </div>
-              <div class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-zinc-700 transition-colors">
-                &rarr;
-              </div>
+              <h3 class="text-white font-extrabold text-base font-outfit uppercase">
+                {project.title}
+              </h3>
+              <span class="text-[10px] text-zinc-400 font-sans mt-0.5 block">
+                {project.location}
+              </span>
             </div>
           </a>
         {/each}
