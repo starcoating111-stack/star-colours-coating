@@ -50,11 +50,11 @@
 
 <section
 	id="testimonials"
-	class="py-20 bg-gradient-to-b from-[#1c120f] to-[#140d0b] px-6 text-zinc-300 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
+	class="py-20 bg-[#c2bebe] px-6 text-zinc-900 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
 >
 	<div class="max-w-4xl mx-auto relative flex flex-col items-center">
 		{#if list.length === 0}
-			<div class="text-zinc-500 text-sm py-12">
+			<div class="text-zinc-600 text-sm py-12">
 				Testimonials will appear here once added in the dashboard.
 			</div>
 		{:else}
@@ -64,12 +64,11 @@
 				use:reveal
 			>
 				<!-- Large Double Quotes Icon -->
-				<span class="text-6xl text-brand-accent/30 leading-none font-serif select-none mt-2">“</span
-				>
+				<span class="text-6xl text-[#9ea2a2] leading-none font-serif select-none mt-2">“</span>
 
 				<!-- Review Text -->
 				<p
-					class="text-base sm:text-lg md:text-xl text-zinc-200 italic max-w-2xl leading-relaxed font-sans px-4"
+					class="text-base sm:text-lg md:text-xl text-zinc-800 italic max-w-2xl leading-relaxed font-sans px-4"
 				>
 					{active.review}
 				</p>
@@ -79,7 +78,7 @@
 					<!-- Prev Button -->
 					<button
 						onclick={handlePrev}
-						class="w-10 h-10 rounded-full bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800/50 flex items-center justify-center text-zinc-300 shadow-md hover:shadow-lg active:scale-95 transition-all"
+						class="w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-zinc-700 shadow-md hover:shadow-lg active:scale-95 transition-all"
 						aria-label="Previous review"
 					>
 						<svg
@@ -106,11 +105,11 @@
 									? `/images/${active.photoUrl.split('/').pop()}`
 									: `/images/${active.photoUrl}`}
 								alt={active.name}
-								class="w-16 h-16 rounded-full object-cover bg-zinc-950 border border-brand-accent/30 shadow-md"
+								class="w-16 h-16 rounded-full object-cover bg-white/50 border border-white shadow-md"
 							/>
 						{:else}
 							<div
-								class="w-16 h-16 rounded-full bg-zinc-900 text-brand-accent border border-brand-accent/30 shadow-md flex items-center justify-center font-bold text-lg font-outfit"
+								class="w-16 h-16 rounded-full bg-zinc-400 text-zinc-900 border border-white shadow-md flex items-center justify-center font-bold text-lg font-outfit"
 							>
 								{active.name.substring(0, 2).toUpperCase()}
 							</div>
@@ -120,7 +119,7 @@
 					<!-- Next Button -->
 					<button
 						onclick={handleNext}
-						class="w-10 h-10 rounded-full bg-zinc-900/60 hover:bg-zinc-800/80 border border-zinc-800/50 flex items-center justify-center text-zinc-300 shadow-md hover:shadow-lg active:scale-95 transition-all"
+						class="w-10 h-10 rounded-full bg-white/80 hover:bg-white flex items-center justify-center text-zinc-700 shadow-md hover:shadow-lg active:scale-95 transition-all"
 						aria-label="Next review"
 					>
 						<svg
@@ -137,21 +136,19 @@
 				</div>
 
 				<!-- Author Name, Location & Stars -->
-				<div class="space-y-2">
-					<h4 class="font-extrabold text-base text-white font-outfit uppercase tracking-wide">
+				<div class="space-y-1">
+					<h4 class="font-extrabold text-base text-zinc-950 font-serif">
 						- {active.name}{#if active.designation}, {active.designation}{/if}
 					</h4>
 
 					<!-- Stars rating indicator -->
-					<div class="flex items-center justify-center gap-1.5 pt-1">
+					<div class="flex items-center justify-center gap-1.5 pt-1.5">
 						<div class="flex text-amber-500 text-sm gap-0.5">
 							{#each Array(5) as _, i}
-								<span class={i < active.rating ? 'text-brand-accent font-bold' : 'text-zinc-700'}
-									>★</span
-								>
+								<span class={i < active.rating ? 'text-amber-500' : 'text-zinc-400'}>★</span>
 							{/each}
 						</div>
-						<span class="text-xs text-zinc-400 font-bold font-outfit">{active.rating} / 5</span>
+						<span class="text-xs text-zinc-600 font-bold font-outfit">{active.rating} / 5</span>
 					</div>
 				</div>
 
@@ -162,8 +159,8 @@
 							<button
 								onclick={() => (currentIndex = idx)}
 								class="h-1.5 rounded-full transition-all {currentIndex === idx
-									? 'w-6 bg-brand-accent'
-									: 'w-1.5 bg-zinc-700 hover:bg-zinc-550'}"
+									? 'w-6 bg-zinc-800'
+									: 'w-1.5 bg-zinc-500 hover:bg-zinc-700'}"
 								aria-label="Go to slide {idx + 1}"
 							></button>
 						{/each}

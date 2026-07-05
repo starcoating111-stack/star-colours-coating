@@ -67,10 +67,18 @@
 			<div class="relative w-full overflow-hidden py-4 no-scrollbar reveal-fade-up" use:reveal>
 				<!-- Left and Right fade overlays for premium blend -->
 				<div
-					class="absolute inset-y-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-brand-dark to-transparent z-10 pointer-events-none"
+					class="absolute inset-y-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-zinc-950 via-zinc-950/70 to-transparent z-10 pointer-events-none"
 				></div>
 				<div
-					class="absolute inset-y-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-brand-dark to-transparent z-10 pointer-events-none"
+					class="absolute inset-y-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-zinc-950 via-zinc-950/70 to-transparent z-10 pointer-events-none"
+				></div>
+
+				<!-- Top and Bottom vertical fade overlays for horizontal blending -->
+				<div
+					class="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-zinc-950 to-transparent z-10 pointer-events-none"
+				></div>
+				<div
+					class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#1c120f] to-transparent z-10 pointer-events-none"
 				></div>
 
 				<!-- Scrolling track (rendered 3 times for seamless looping) -->
