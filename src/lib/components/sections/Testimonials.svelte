@@ -50,7 +50,7 @@
 
 <section
 	id="testimonials"
-	class="py-20 bg-[#c2bebe] px-6 text-zinc-900 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
+	class="py-16 sm:py-20 bg-[#c2bebe] px-4 sm:px-6 text-zinc-900 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
 >
 	<div class="max-w-4xl mx-auto relative flex flex-col items-center">
 		{#if list.length === 0}

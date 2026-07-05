@@ -29,7 +29,7 @@
 
 <section
 	id="team"
-	class="py-24 bg-zinc-950 px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-16 sm:py-24 bg-zinc-950 px-4 sm:px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->
@@ -88,10 +88,10 @@
 				</span>
 			</div>
 		{:else}
-			<div class="flex flex-wrap justify-center gap-6 sm:gap-8 reveal-fade-up" use:reveal>
+			<div class="flex flex-wrap justify-center gap-5 sm:gap-6 sm:gap-8 reveal-fade-up" use:reveal>
 				{#each visible as member}
 					<div
-						class="w-full sm:w-72 bg-zinc-900/40 border border-brand-accent/15 rounded-3xl p-8 text-center space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-accent/40 transition-all duration-300 backdrop-blur-md"
+						class="w-full sm:w-64 md:w-72 bg-zinc-900/40 border border-brand-accent/15 rounded-3xl p-6 sm:p-8 text-center space-y-5 sm:space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-accent/40 transition-all duration-300 backdrop-blur-md"
 					>
 						<!-- Subtle glow on hover -->
 						<div

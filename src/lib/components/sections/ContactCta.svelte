@@ -56,7 +56,7 @@
 
 <section
 	id="contact"
-	class="py-24 bg-gradient-to-b from-[#1c120f] to-zinc-950 px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-16 sm:py-24 bg-gradient-to-b from-[#1c120f] to-zinc-950 px-4 sm:px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-4xl mx-auto space-y-12">
 		<!-- Header -->
@@ -110,7 +110,7 @@
 
 		<!-- Form Container -->
 		<div
-			class="bg-brand-card border border-zinc-900 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl relative reveal-fade-up"
+			class="bg-brand-card border border-zinc-900 rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl relative reveal-fade-up"
 			use:reveal
 		>
 			{#if success}

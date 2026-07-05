@@ -40,7 +40,7 @@
 </script>
 
 <section
-	class="py-24 bg-gradient-to-b from-[#382621] to-[#140d0b] px-6 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
+	class="py-16 sm:py-24 bg-gradient-to-b from-[#382621] to-[#140d0b] px-4 sm:px-6 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
 >
 	<div class="max-w-7xl mx-auto space-y-12">
 		<!-- Header with nav arrows -->
@@ -141,7 +141,7 @@
 
 			<!-- Right details area -->
 			<div
-				class="lg:col-span-5 flex flex-col justify-between gap-6 bg-brand-card border border-zinc-900 rounded-3xl p-8 md:p-10 relative overflow-hidden"
+				class="lg:col-span-5 flex flex-col justify-between gap-6 bg-brand-card border border-zinc-900 rounded-3xl p-6 sm:p-8 md:p-10 relative overflow-hidden"
 			>
 				<!-- Gold vertical accent line on left -->
 				<div class="absolute left-0 top-1/4 bottom-1/4 w-1 bg-brand-accent rounded-r-md"></div>
