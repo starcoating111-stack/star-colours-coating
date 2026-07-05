@@ -66,6 +66,47 @@ body {
 	animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Scroll Reveal Animations */
+.reveal-fade-up {
+	opacity: 0;
+	transform: translateY(40px);
+	transition:
+		opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade-up.reveal-active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal-fade-up {
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+	.animate-marquee {
+		animation: none !important;
+		overflow-x: auto !important;
+		white-space: nowrap !important;
+	}
+}
+
+/* Services Continuous Marquee Ticker */
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-33.3333%);
+	}
+}
+
+.animate-marquee {
+	display: flex;
+	animation: marquee 35s linear infinite;
+}
+
 .delay-100 {
 	animation-delay: 100ms;
 }

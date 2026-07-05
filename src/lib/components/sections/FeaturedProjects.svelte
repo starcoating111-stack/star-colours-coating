@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	let { projects = [] } = $props<{
 		projects?: Array<{
 			id: number;
@@ -13,38 +15,22 @@
 
 <section
 	id="portfolio"
-	class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-24 bg-gradient-to-b from-[#140d0b] to-[#0c0807] px-6 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->
-		<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 animate-fade-in-up">
-			<div class="space-y-3">
-				<div class="inline-flex items-center gap-2">
-					<span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-					<span
-						class="text-[10px] font-bold text-brand-accent uppercase tracking-widest font-outfit"
-					>
-						CASE STUDIES & PORTFOLIO
-					</span>
-				</div>
-				<h2
-					class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
-				>
-					FEATURED PROJECTS
-				</h2>
-				<p class="text-zinc-400 text-sm font-light font-sans max-w-xl">
-					Explore our hallmark coatings and architectural finishing works. Precision applied across
-					residential and commercial landmarks.
-				</p>
-			</div>
-
-			<a
-				href="/projects"
-				class="inline-flex items-center gap-2 text-xs font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/50 hover:bg-zinc-900 px-5 py-3 rounded-xl border border-zinc-800/80 hover:border-brand-accent/40 w-fit"
+		<div class="text-center space-y-4 max-w-2xl mx-auto reveal-fade-up" use:reveal>
+			<h2
+				class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
 			>
-				<span>Browse Full Portfolio</span>
-				<span>&rarr;</span>
-			</a>
+				OUR PORTFOLIO
+			</h2>
+			<p
+				class="text-zinc-400 text-sm sm:text-base leading-relaxed font-light font-sans max-w-xl mx-auto"
+			>
+				Experience craftsmanship and innovation — from immersive visuals to unforgettable moments.
+			</p>
+			<div class="w-24 h-0.5 bg-brand-accent mx-auto mt-6"></div>
 		</div>
 
 		<!-- Portfolio Grid -->
@@ -71,7 +57,8 @@
 			</div>
 		{:else}
 			<div
-				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 animate-fade-in-up delay-100"
+				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 reveal-fade-up"
+				use:reveal
 			>
 				{#each projects as project}
 					<a
@@ -134,6 +121,18 @@
 						</div>
 					</a>
 				{/each}
+			</div>
+		{/if}
+
+		{#if projects.length > 0}
+			<div class="text-center pt-8 reveal-fade-up" use:reveal>
+				<a
+					href="/projects"
+					class="inline-flex items-center gap-2 text-xs font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/50 hover:bg-zinc-900 px-6 py-3.5 rounded-xl border border-zinc-850 hover:border-brand-accent/40 shadow-lg"
+				>
+					<span>Browse Full Portfolio</span>
+					<span>&rarr;</span>
+				</a>
 			</div>
 		{/if}
 	</div>

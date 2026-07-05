@@ -1,0 +1,118 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-07-05T19:36:50Z",
+	"title": "Design System: Star Colours Coating",
+	"extensions": {
+		"colorMeta": {
+			"brand-dark": {
+				"role": "neutral",
+				"displayName": "Deep Roasted Cocoa",
+				"canonical": "oklch(22.86% 0.027 34.3)",
+				"tonalRamp": [
+					"#080504",
+					"#150d0b",
+					"#231713",
+					"#3d2a23",
+					"#5c4035",
+					"#805b4c",
+					"#a88171",
+					"#d0b1a5"
+				]
+			},
+			"brand-card": {
+				"role": "neutral",
+				"displayName": "Dark Espresso",
+				"canonical": "oklch(15.93% 0.016 34.3)",
+				"tonalRamp": [
+					"#030202",
+					"#0c0807",
+					"#150d0b",
+					"#271b17",
+					"#3d2a24",
+					"#5c4238",
+					"#806052",
+					"#ab887b"
+				]
+			},
+			"brand-accent": {
+				"role": "primary",
+				"displayName": "Burnished Gold",
+				"canonical": "oklch(74.45% 0.091 80.2)",
+				"tonalRamp": [
+					"#312615",
+					"#5c482c",
+					"#8d7049",
+					"#c5a880",
+					"#dbbe97",
+					"#eccfb2",
+					"#fae2cd",
+					"#fff3e8"
+				]
+			}
+		},
+		"typographyMeta": {
+			"display": { "displayName": "Display", "purpose": "Hero and major section headings." },
+			"body": { "displayName": "Body", "purpose": "Descriptions and readable text content." }
+		},
+		"shadows": [
+			{
+				"name": "low-glow",
+				"value": "0 4px 20px rgba(197,168,128,0.15)",
+				"purpose": "Subtle gold accent hover shadow."
+			}
+		],
+		"motion": [
+			{
+				"name": "ease-out-expo",
+				"value": "cubic-bezier(0.16, 1, 0.3, 1)",
+				"purpose": "Standard reveal transition."
+			}
+		],
+		"breakpoints": [
+			{ "name": "sm", "value": "640px" },
+			{ "name": "md", "value": "768px" },
+			{ "name": "lg", "value": "1024px" }
+		]
+	},
+	"components": [
+		{
+			"name": "Primary Button",
+			"kind": "button",
+			"refersTo": "button-primary",
+			"description": "Call to action button.",
+			"html": "<button class=\"ds-btn-primary\">Let's Talk</button>",
+			"css": ".ds-btn-primary { background: #c5a880; color: #150d0b; padding: 14px 32px; border-radius: 9999px; border: 1px solid #c5a880; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: transparent; color: #c5a880; transform: scale(1.03); }"
+		}
+	],
+	"narrative": {
+		"northStar": "The Tactile Alchemist",
+		"overview": "The Tactile Alchemist design system focuses on the visualization of texture, high-performance protective quality, and uncompromised surface luxury. The aesthetic philosophy is rooted in a rich, warm dark atmosphere where tactile depth and finish details take center stage.",
+		"keyCharacteristics": [
+			"Deep, warm-toned dark backgrounds transitioning smoothly to evoke luxury.",
+			"Precise, high-contrast typography pairing geometric and serif families.",
+			"Intentional, rare usage of burnished gold accents to guide visual hierarchy."
+		],
+		"rules": [
+			{
+				"name": "The Rarity Rule",
+				"body": "The Burnished Gold accent is reserved for key touchpoints only. If everything is highlighted, nothing is.",
+				"section": "colors"
+			},
+			{
+				"name": "The Flat-By-Default Rule",
+				"body": "Surfaces are flat at rest. Subtle borders and outline indicators represent active elements.",
+				"section": "elevation"
+			}
+		],
+		"dos": [
+			"Do maintain a strict contrast ratio (≥4.5:1) for all body copy.",
+			"Do stagger animations with individual delays for a premium entrance.",
+			"Do center portfolio headings and include the standard gold divider line."
+		],
+		"donts": [
+			"Don't use generic blue-to-purple gradients.",
+			"Don't use border-left greater than 1px as a colored accent stripe on cards or alerts.",
+			"Don't hide critical details behind hover opacity."
+		]
+	}
+}

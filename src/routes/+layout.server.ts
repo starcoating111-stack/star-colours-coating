@@ -1,7 +1,7 @@
 import type { LayoutServerLoad } from './$types';
 import { getDb } from '$lib/server/db/client';
-import { settings } from '$lib/server/db/schema';
-import { eq } from 'drizzle-orm';
+import { settings, services } from '$lib/server/db/schema';
+import { eq, asc } from 'drizzle-orm';
 import { building } from '$app/environment';
 
 export const load: LayoutServerLoad = async ({ locals, platform }) => {
@@ -16,6 +16,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 				workingHours: '',
 				socialLinks: {}
 			},
+			services: [],
 			isAdmin: false
 		};
 	}
@@ -24,6 +25,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 
 	try {
 		const [config] = await db.select().from(settings).where(eq(settings.id, 1));
+		const servicesList = await db.select().from(services).orderBy(asc(services.sortOrder)).limit(7);
 		return {
 			settings: config ?? {
 				companyName: 'Client Site',
@@ -34,6 +36,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 				workingHours: '',
 				socialLinks: {}
 			},
+			services: servicesList,
 			isAdmin: locals.isAdmin ?? false
 		};
 	} catch (err) {
@@ -48,6 +51,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 				workingHours: '',
 				socialLinks: {}
 			},
+			services: [],
 			isAdmin: locals.isAdmin ?? false
 		};
 	}

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { reveal } from '$lib/reveal';
 
 	let { settings } = $props<{
 		settings: {
@@ -57,9 +58,9 @@
 	id="contact"
 	class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
-	<div class="max-w-4xl mx-auto space-y-12 animate-fade-in-up">
+	<div class="max-w-4xl mx-auto space-y-12">
 		<!-- Header -->
-		<div class="text-center space-y-4 max-w-2xl mx-auto">
+		<div class="text-center space-y-4 max-w-2xl mx-auto reveal-fade-up" use:reveal>
 			<h2
 				class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
 			>
@@ -75,7 +76,8 @@
 		<!-- Optional WhatsApp Instant Chat Card -->
 		{#if waUrl}
 			<div
-				class="bg-zinc-900/30 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl backdrop-blur-md"
+				class="bg-zinc-900/30 border border-zinc-800/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl backdrop-blur-md reveal-fade-up"
+				use:reveal
 			>
 				<div class="flex items-center gap-4 text-center sm:text-left">
 					<div
@@ -108,7 +110,8 @@
 
 		<!-- Form Container -->
 		<div
-			class="bg-brand-card border border-zinc-900 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl relative"
+			class="bg-brand-card border border-zinc-900 rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl relative reveal-fade-up"
+			use:reveal
 		>
 			{#if success}
 				<div class="text-center py-8 space-y-4">

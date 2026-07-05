@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	let { testimonials = [] } = $props<{
 		testimonials?: Array<{
 			id: number;
@@ -57,7 +59,10 @@
 			</div>
 		{:else}
 			<!-- Carousel Content Outer -->
-			<div class="w-full flex flex-col items-center text-center space-y-6 select-none relative">
+			<div
+				class="w-full flex flex-col items-center text-center space-y-6 select-none relative reveal-fade-up"
+				use:reveal
+			>
 				<!-- Large Double Quotes Icon -->
 				<span class="text-6xl text-[#9ea2a2] leading-none font-serif select-none mt-2">“</span>
 

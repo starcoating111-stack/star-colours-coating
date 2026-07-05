@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	const cases = [
 		{
 			id: 1,
@@ -38,11 +40,14 @@
 </script>
 
 <section
-	class="py-24 bg-brand-dark px-6 border-t border-zinc-900 selection:bg-zinc-800 selection:text-white"
+	class="py-24 bg-gradient-to-b from-[#382621] to-[#140d0b] px-6 border-t border-zinc-900/10 selection:bg-zinc-800 selection:text-white"
 >
 	<div class="max-w-7xl mx-auto space-y-12">
 		<!-- Header with nav arrows -->
-		<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+		<div
+			class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-fade-up"
+			use:reveal
+		>
 			<div class="space-y-4">
 				<h2
 					class="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-white tracking-tight leading-tight max-w-xl"
@@ -116,7 +121,7 @@
 		</div>
 
 		<!-- main view grid -->
-		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch reveal-fade-up" use:reveal>
 			<!-- Left image area -->
 			<div
 				class="lg:col-span-7 bg-zinc-900/20 rounded-3xl overflow-hidden border border-zinc-850 aspect-[4/3] w-full relative"

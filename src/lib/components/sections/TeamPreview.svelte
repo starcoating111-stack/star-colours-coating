@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	let { teamMembers = [], count = 4 } = $props<{
 		teamMembers?: Array<{
 			id: number;
@@ -29,9 +31,12 @@
 	id="team"
 	class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
-	<div class="max-w-7xl mx-auto space-y-16 animate-fade-in-up">
+	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->
-		<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+		<div
+			class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-fade-up"
+			use:reveal
+		>
 			<div class="space-y-3">
 				<div class="inline-flex items-center gap-2">
 					<span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
@@ -83,9 +88,7 @@
 				</span>
 			</div>
 		{:else}
-			<div
-				class="flex flex-wrap justify-center gap-6 sm:gap-8 animate-fade-in-up delay-100"
-			>
+			<div class="flex flex-wrap justify-center gap-6 sm:gap-8 reveal-fade-up" use:reveal>
 				{#each visible as member}
 					<div
 						class="w-full sm:w-72 bg-brand-card border border-zinc-900/80 rounded-3xl p-8 text-center space-y-6 shadow-xl relative overflow-hidden group hover:border-brand-accent/30 transition-all duration-300"

@@ -6,7 +6,7 @@
 	import { page } from '$app/stores';
 
 	let { data, children } = $props<{
-		data: { settings: any };
+		data: { settings: any; services: any[] };
 		children: any;
 	}>();
 
@@ -24,7 +24,7 @@
 		<div class="flex-grow">
 			{@render children()}
 		</div>
-		<Footer settings={data.settings} />
+		<Footer settings={data.settings} services={data.services} />
 		<FloatingWhatsApp
 			whatsappNumber={data.settings?.whatsappNumber}
 			whatsappDefaultMessage={data.settings?.whatsappDefaultMessage?.trim() ||

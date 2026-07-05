@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { reveal } from '$lib/reveal';
+
 	let { faqs } = $props<{
 		faqs: Array<{ id: number; question: string; answer: string }>;
 	}>();
@@ -16,7 +18,7 @@
 >
 	<div class="max-w-4xl mx-auto space-y-16">
 		<!-- Header -->
-		<div class="text-center space-y-4">
+		<div class="text-center space-y-4 reveal-fade-up" use:reveal>
 			<span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Support</span>
 			<h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
 				Frequently Asked Questions
@@ -31,7 +33,7 @@
 				Questions will appear here once added in the admin dashboard.
 			</div>
 		{:else}
-			<div class="space-y-4">
+			<div class="space-y-4 reveal-fade-up" use:reveal>
 				{#each faqs.slice(0, 4) as item}
 					{@const isOpen = openId === item.id}
 					<div
