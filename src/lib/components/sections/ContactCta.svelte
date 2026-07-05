@@ -56,7 +56,7 @@
 
 <section
 	id="contact"
-	class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-24 bg-gradient-to-b from-[#1c120f] to-zinc-950 px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-4xl mx-auto space-y-12">
 		<!-- Header -->

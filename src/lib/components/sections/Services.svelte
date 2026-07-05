@@ -15,7 +15,7 @@
 
 <section
 	id="services"
-	class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-24 bg-gradient-to-b from-zinc-950 to-[#1c120f] px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->

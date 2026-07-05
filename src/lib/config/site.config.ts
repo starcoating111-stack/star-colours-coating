@@ -27,6 +27,7 @@ export const siteConfig: SiteConfig = {
 		'transformations',
 		'featuredProjects',
 		'teamPreview',
+		'faqPreview',
 		'contactCta'
 	],
 	seo: {

@@ -120,7 +120,7 @@
 	id="nav-drawer"
 	aria-label="Site navigation"
 	aria-hidden={!drawerOpen}
-	class="fixed inset-y-0 right-0 z-50 flex flex-col w-72 sm:w-80 max-w-[85vw] bg-brand-dark border-l border-zinc-800/80 shadow-2xl drawer-enter
+	class="fixed inset-y-0 right-0 z-50 flex flex-col w-72 sm:w-80 max-w-[85vw] bg-zinc-950 border-l border-zinc-800/80 shadow-2xl drawer-enter
 	       {drawerOpen ? 'translate-x-0' : 'translate-x-full'}"
 >
 	<!-- Drawer header -->

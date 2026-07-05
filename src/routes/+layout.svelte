@@ -12,6 +12,7 @@
 
 	// Dynamically detect admin paths to bypass public Nav/Footer wrapping
 	let isAdminRoute = $derived($page.url.pathname.startsWith('/admin'));
+	let isHome = $derived($page.url.pathname === '/');
 </script>
 
 {#if isAdminRoute}
@@ -25,10 +26,12 @@
 			{@render children()}
 		</div>
 		<Footer settings={data.settings} services={data.services} />
-		<FloatingWhatsApp
-			whatsappNumber={data.settings?.whatsappNumber}
-			whatsappDefaultMessage={data.settings?.whatsappDefaultMessage?.trim() ||
-				"Hi, I'm interested in your services."}
-		/>
+		{#if !isHome}
+			<FloatingWhatsApp
+				whatsappNumber={data.settings?.whatsappNumber}
+				whatsappDefaultMessage={data.settings?.whatsappDefaultMessage?.trim() ||
+					"Hi, I'm interested in your services."}
+			/>
+		{/if}
 	</div>
 {/if}

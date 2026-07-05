@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let { data, form } = $props<{
 		data: { whatsappNumber: string | null; whatsappDefaultMessage: string };
@@ -13,6 +14,13 @@
 	let phone = $state('');
 	let subject = $state('');
 	let message = $state('');
+
+	onMount(() => {
+		const urlSubject = $page.url.searchParams.get('subject');
+		if (urlSubject) {
+			subject = urlSubject;
+		}
+	});
 
 	// Normalized number is already digits-only from the server load
 	const waNum = $derived(data.whatsappNumber ?? '');

@@ -14,7 +14,7 @@
 </script>
 
 <section
-	class="py-24 bg-zinc-950 px-6 border-t border-zinc-900 selection:bg-zinc-800 selection:text-white"
+	class="py-24 bg-gradient-to-b from-zinc-950 to-[#1c120f] px-6 border-t border-zinc-900 selection:bg-zinc-800 selection:text-white"
 >
 	<div class="max-w-4xl mx-auto space-y-16">
 		<!-- Header -->
