@@ -5,7 +5,7 @@ import { asc } from 'drizzle-orm';
 
 export const load: PageServerLoad = async ({ platform, setHeaders }) => {
 	setHeaders({
-		'Cache-Control': 'public, max-age=60, s-maxage=3600, stale-while-revalidate=86400'
+		'Cache-Control': 'public, max-age=30, s-maxage=60, stale-while-revalidate=300'
 	});
 	const db = getDb(platform?.env as any);
 	try {

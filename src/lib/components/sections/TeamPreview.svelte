@@ -84,11 +84,11 @@
 			</div>
 		{:else}
 			<div
-				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 animate-fade-in-up delay-100"
+				class="flex flex-wrap justify-center gap-6 sm:gap-8 animate-fade-in-up delay-100"
 			>
 				{#each visible as member}
 					<div
-						class="bg-brand-card border border-zinc-900/80 rounded-3xl p-8 text-center space-y-6 shadow-xl relative overflow-hidden group hover:border-brand-accent/30 transition-all duration-300"
+						class="w-full sm:w-72 bg-brand-card border border-zinc-900/80 rounded-3xl p-8 text-center space-y-6 shadow-xl relative overflow-hidden group hover:border-brand-accent/30 transition-all duration-300"
 					>
 						<!-- Subtle glow on hover -->
 						<div

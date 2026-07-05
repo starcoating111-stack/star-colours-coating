@@ -21,7 +21,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 		aria-label="Chat with us on WhatsApp"
-		class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm px-4 py-3 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all hover:scale-105 active:scale-95 group border border-[#25D366]/30"
+		class="fixed bottom-6 left-6 z-40 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm px-4 py-3 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] transition-all hover:scale-105 active:scale-95 group border border-[#25D366]/30 animate-fade-in-up"
 	>
 		<svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
 			<path
