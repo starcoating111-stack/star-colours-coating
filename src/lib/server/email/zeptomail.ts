@@ -2,70 +2,74 @@
  * Sends a transactional email using the Zoho ZeptoMail v1.1 REST API.
  */
 export async function sendEmailViaZeptoMail(
-  apiKey: string,
-  bounceEmail: string,
-  fromName: string,
-  toEmail: string,
-  toName: string,
-  subject: string,
-  htmlBody: string
+	apiKey: string,
+	bounceEmail: string,
+	fromName: string,
+	toEmail: string,
+	toName: string,
+	subject: string,
+	htmlBody: string
 ): Promise<boolean> {
-  if (!apiKey || apiKey === 'mock_key_for_testing') {
-    console.log(`[ZeptoMail Mock] Simulated sending email to ${toEmail}: "${subject}"`);
-    return true;
-  }
+	if (!apiKey || apiKey === 'mock_key_for_testing') {
+		console.log(`[ZeptoMail Mock] Simulated sending email to ${toEmail}: "${subject}"`);
+		return true;
+	}
 
-  // derive sender address from the verified bounceEmail domain (e.g. hello@yourdomain.com)
-  // ZeptoMail strictly requires the from address domain to be verified in the account.
-  const fromAddress = bounceEmail;
+	// derive sender address from the verified bounceEmail domain (e.g. hello@yourdomain.com)
+	// ZeptoMail strictly requires the from address domain to be verified in the account.
+	const fromAddress = bounceEmail;
 
-  const payload = {
-    bounce_address: bounceEmail,
-    from: {
-      address: fromAddress,
-      name: fromName
-    },
-    to: [
-      {
-        email_address: {
-          address: toEmail,
-          name: toName
-        }
-      }
-    ],
-    subject,
-    htmlbody: htmlBody
-  };
+	const payload = {
+		bounce_address: bounceEmail,
+		from: {
+			address: fromAddress,
+			name: fromName
+		},
+		to: [
+			{
+				email_address: {
+					address: toEmail,
+					name: toName
+				}
+			}
+		],
+		subject,
+		htmlbody: htmlBody
+	};
 
-  try {
-    const response = await fetch('https://api.zeptomail.com/v1.1/email', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Authorization': `zoho-enczapikey ${apiKey.trim()}`
-      },
-      body: JSON.stringify(payload)
-    });
+	try {
+		const response = await fetch('https://api.zeptomail.com/v1.1/email', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+				Authorization: `zoho-enczapikey ${apiKey.trim()}`
+			},
+			body: JSON.stringify(payload)
+		});
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error(`ZeptoMail HTTP Error ${response.status}:`, errText);
-      return false;
-    }
+		if (!response.ok) {
+			const errText = await response.text();
+			console.error(`ZeptoMail HTTP Error ${response.status}:`, errText);
+			return false;
+		}
 
-    return true;
-  } catch (err) {
-    console.error('ZeptoMail connection/fetch error:', err);
-    return false;
-  }
+		return true;
+	} catch (err) {
+		console.error('ZeptoMail connection/fetch error:', err);
+		return false;
+	}
 }
 
 /**
  * Returns the HTML body for the client confirmation email.
  */
-export function getClientEmailTemplate(companyName: string, clientName: string, messageBody: string): string {
-  return `
+export function getClientEmailTemplate(
+	companyName: string,
+	clientName: string,
+	messageBody: string
+): string {
+	return `
     <div style="font-family: sans-serif; max-width: 600px; color: #1c1917; line-height: 1.6;">
       <h2 style="color: #09090b; font-size: 20px; font-weight: 700; margin-bottom: 20px;">We've received your inquiry</h2>
       <p>Hello ${clientName},</p>
@@ -85,14 +89,14 @@ export function getClientEmailTemplate(companyName: string, clientName: string, 
  * Returns the HTML body for the owner notification email.
  */
 export function getOwnerEmailTemplate(
-  companyName: string,
-  name: string,
-  email: string,
-  phone: string | null,
-  subject: string | null,
-  message: string
+	companyName: string,
+	name: string,
+	email: string,
+	phone: string | null,
+	subject: string | null,
+	message: string
 ): string {
-  return `
+	return `
     <div style="font-family: sans-serif; max-width: 600px; color: #1c1917; line-height: 1.6;">
       <h2 style="color: #09090b; font-size: 20px; font-weight: 700; margin-bottom: 20px;">New Form Submission</h2>
       <p>A new contact form inquiry has been submitted on the <strong>${companyName}</strong> website.</p>

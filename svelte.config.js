@@ -23,7 +23,11 @@ const config = {
 				'script-src': ['self'],
 				'style-src': ['self', 'unsafe-inline'],
 				'img-src': ['self', 'data:', 'blob:', 'https://img.youtube.com'],
-				'frame-src': ['https://www.youtube.com', 'https://player.vimeo.com', 'https://www.loom.com'],
+				'frame-src': [
+					'https://www.youtube.com',
+					'https://player.vimeo.com',
+					'https://www.loom.com'
+				],
 				'frame-ancestors': ['none'],
 				'object-src': ['none']
 			}

@@ -1,73 +1,83 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-brand-dark: #231713;
-  --color-brand-card: #150d0b;
-  --color-brand-accent: #c5a880;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', sans-serif;
-  --font-outfit: 'Outfit', sans-serif;
+	--color-brand-dark: #231713;
+	--color-brand-card: #150d0b;
+	--color-brand-accent: #c5a880;
+	--font-serif: 'Playfair Display', Georgia, serif;
+	--font-sans: 'Plus Jakarta Sans', sans-serif;
+	--font-outfit: 'Outfit', sans-serif;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--color-brand-dark);
-  color: #f4f4f5; /* zinc-100 */
+	font-family: var(--font-sans);
+	background-color: var(--color-brand-dark);
+	color: #f4f4f5; /* zinc-100 */
 }
 
 /* Custom scrollbar styling or removal for horizontal tracks */
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 /* Custom torn paper masks or styles if needed */
 .torn-paper {
-  position: relative;
+	position: relative;
 }
 .torn-paper::before,
 .torn-paper::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background-size: 16px 8px;
-  background-repeat: repeat-x;
-  z-index: 10;
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 8px;
+	background-size: 16px 8px;
+	background-repeat: repeat-x;
+	z-index: 10;
 }
 .torn-paper::before {
-  top: -1px;
-  background-image: radial-gradient(circle at 8px -4px, transparent 10px, #231713 11px);
+	top: -1px;
+	background-image: radial-gradient(circle at 8px -4px, transparent 10px, #231713 11px);
 }
 .torn-paper::after {
-  bottom: -1px;
-  background-image: radial-gradient(circle at 8px 12px, transparent 10px, #231713 11px);
-  transform: rotate(180deg);
+	bottom: -1px;
+	background-image: radial-gradient(circle at 8px 12px, transparent 10px, #231713 11px);
+	transform: rotate(180deg);
 }
 
 /* Landing Page Scroll Animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .animate-fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	opacity: 0;
+	animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-100 {
+	animation-delay: 100ms;
+}
+.delay-200 {
+	animation-delay: 200ms;
+}
+.delay-300 {
+	animation-delay: 300ms;
+}
+.delay-400 {
+	animation-delay: 400ms;
+}
+.delay-500 {
+	animation-delay: 500ms;
+}
