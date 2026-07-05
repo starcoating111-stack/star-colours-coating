@@ -29,7 +29,7 @@
 
 <section
 	id="team"
-	class="py-24 bg-gradient-to-b from-[#0c0807] to-zinc-950 px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
+	class="py-24 bg-zinc-950 px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white relative overflow-hidden"
 >
 	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->
@@ -51,7 +51,7 @@
 				>
 					MEET OUR TEAM
 				</h2>
-				<p class="text-zinc-400 text-sm font-light font-sans max-w-xl">
+				<p class="text-zinc-450 text-sm font-light font-sans max-w-xl">
 					The visionaries and coating specialists driving perfection in every project. Committed to
 					quality, precision, and durability.
 				</p>
@@ -69,7 +69,7 @@
 		<!-- Team Grid -->
 		{#if visible.length === 0}
 			<div
-				class="border border-dashed border-zinc-800/80 rounded-3xl p-16 text-center text-zinc-550 text-sm font-sans animate-fade-in-up delay-100 flex flex-col items-center justify-center space-y-4"
+				class="border border-dashed border-zinc-800/80 rounded-3xl p-16 text-center text-zinc-550 text-sm font-sans flex flex-col items-center justify-center space-y-4"
 			>
 				<div
 					class="w-12 h-12 rounded-full bg-zinc-900/50 border border-zinc-800 flex items-center justify-center text-zinc-600"
@@ -91,7 +91,7 @@
 			<div class="flex flex-wrap justify-center gap-6 sm:gap-8 reveal-fade-up" use:reveal>
 				{#each visible as member}
 					<div
-						class="w-full sm:w-72 bg-brand-card border border-zinc-900/80 rounded-3xl p-8 text-center space-y-6 shadow-xl relative overflow-hidden group hover:border-brand-accent/30 transition-all duration-300"
+						class="w-full sm:w-72 bg-zinc-900/40 border border-brand-accent/15 rounded-3xl p-8 text-center space-y-6 shadow-2xl relative overflow-hidden group hover:border-brand-accent/40 transition-all duration-300 backdrop-blur-md"
 					>
 						<!-- Subtle glow on hover -->
 						<div
@@ -100,7 +100,7 @@
 
 						<!-- Avatar -->
 						<div
-							class="relative w-28 h-28 mx-auto rounded-full overflow-hidden bg-zinc-900 border-2 border-brand-accent/40 shadow-inner flex items-center justify-center group-hover:border-brand-accent transition-colors"
+							class="relative w-28 h-28 mx-auto rounded-full overflow-hidden bg-zinc-950 border-2 border-brand-accent/30 shadow-inner flex items-center justify-center group-hover:border-brand-accent transition-colors"
 						>
 							{#if member.photoUrl}
 								<img
