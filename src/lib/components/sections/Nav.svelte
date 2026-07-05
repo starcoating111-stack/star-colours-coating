@@ -90,23 +90,56 @@
     </div>
   </div>
 
-  <!-- Mobile Dropdown Menu -->
+  <!-- Mobile Right Side Drawer -->
   {#if mobileOpen}
-    <div class="md:hidden bg-zinc-950/95 border-b border-zinc-900 px-6 py-6 space-y-4 shadow-xl">
-      {#each mobileLinks as link}
-        <a
-          href={link.href}
-          onclick={() => mobileOpen = false}
-          class="block text-sm font-semibold text-zinc-400 hover:text-white tracking-widest font-outfit transition-colors"
-        >
-          {link.name.toUpperCase()}
-        </a>
-      {/each}
-      <div class="pt-4 border-t border-zinc-900">
+    <!-- Backdrop overlay -->
+    <div
+      class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden transition-opacity duration-300 animate-fade-in"
+      onclick={() => mobileOpen = false}
+      aria-hidden="true"
+    ></div>
+
+    <!-- Slide-in Menu -->
+    <div class="fixed top-0 right-0 bottom-0 w-[300px] z-55 bg-brand-dark border-l border-zinc-900/80 shadow-2xl p-8 flex flex-col justify-between md:hidden transform transition-transform duration-300 ease-out">
+      <div class="space-y-8">
+        <!-- Close button & Logo -->
+        <div class="flex items-center justify-between">
+          <img
+            src={logoSrc}
+            alt={settings.companyName}
+            class="h-10 w-auto max-w-[140px] object-contain"
+          />
+          <button
+            onclick={() => mobileOpen = false}
+            class="p-2 text-zinc-450 hover:text-white focus:outline-none"
+            aria-label="Close Menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="flex flex-col gap-4 pt-4">
+          {#each mobileLinks as link}
+            <a
+              href={link.href}
+              onclick={() => mobileOpen = false}
+              class="text-sm font-semibold text-zinc-400 hover:text-white tracking-widest font-outfit transition-colors py-2 border-b border-zinc-900/30 uppercase"
+            >
+              {link.name}
+            </a>
+          {/each}
+        </nav>
+      </div>
+
+      <!-- Action CTA -->
+      <div class="pt-6 border-t border-zinc-900/60">
         <a
           href="/contact"
           onclick={() => mobileOpen = false}
-          class="w-full block text-center border border-brand-accent hover:bg-brand-accent/10 text-brand-accent font-bold py-2.5 rounded-lg text-xs tracking-widest"
+          class="w-full block text-center border border-brand-accent hover:bg-brand-accent/10 text-brand-accent hover:text-white font-bold py-3.5 rounded-xl text-xs tracking-widest font-outfit uppercase shadow-[0_0_15px_rgba(197,168,128,0.1)] active:scale-95 transition-all"
         >
           CONTACT US!
         </a>

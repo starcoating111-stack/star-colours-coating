@@ -77,7 +77,7 @@
   {/if}
 </svelte:head>
 
-<main class="bg-zinc-950 text-zinc-100 selection:bg-zinc-800 selection:text-white py-16 px-6">
+<main class="bg-brand-dark text-zinc-100 selection:bg-zinc-800 selection:text-white py-16 px-6">
   <div class="max-w-6xl mx-auto space-y-16">
     <!-- Back Navigation -->
     <div>

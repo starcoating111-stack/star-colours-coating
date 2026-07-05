@@ -2,17 +2,6 @@
   let { projects = [] } = $props<{
     projects?: Array<{ id: number; title: string; slug: string; category: string; location: string; coverImageUrl: string }>;
   }>();
-
-  // Fallback defaults if DB is empty
-  const defaultProjects = [
-    { id: 1, title: "Modern Living Space", slug: "modern-living", category: "PU Coating", location: "Rourkela", coverImageUrl: "transform_after_1.jpg" },
-    { id: 2, title: "Elevator Corridor", slug: "corridor-door", category: "Satin Metallic", location: "Bhubaneswar", coverImageUrl: "satin_metallic.png" },
-    { id: 3, title: "Textured Plaster Wall", slug: "textured-wall", category: "Plaster Coating", location: "Cuttack", coverImageUrl: "placeholder_texture_1.png" },
-    { id: 4, title: "Luxury Accent Door", slug: "luxury-door", category: "Metallic Paint", location: "Sambalpur", coverImageUrl: "transform_after_2.jpg" },
-    { id: 5, title: "Wood Spray Finish", slug: "wood-finish", category: "PU Coating", location: "Puri", coverImageUrl: "placeholder_texture_4.png" }
-  ];
-
-  const list = $derived(projects.length > 0 ? projects : defaultProjects);
 </script>
 
 <section id="portfolio" class="py-24 bg-brand-dark px-6 border-t border-zinc-900/60 selection:bg-zinc-800 selection:text-white">
@@ -29,13 +18,18 @@
     </div>
 
     <!-- Portfolio Grid -->
-    {#if list.length === 0}
-      <div class="border border-dashed border-zinc-900 rounded-2xl p-12 text-center text-zinc-650 text-sm font-sans animate-fade-in-up delay-100">
-        Projects will appear here once added in the dashboard.
+    {#if projects.length === 0}
+      <div class="border border-dashed border-zinc-800/80 rounded-3xl p-16 text-center text-zinc-550 text-sm font-sans animate-fade-in-up delay-100 flex flex-col items-center justify-center space-y-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        </svg>
+        <span class="max-w-md leading-relaxed">
+          No featured projects found in the database. Please add projects via the admin dashboard and check the <strong>"Featured"</strong> option.
+        </span>
       </div>
     {:else}
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up delay-100">
-        {#each list as project}
+        {#each projects as project}
           <a
             href="/projects/{project.slug}"
             class="group bg-zinc-950/20 border border-zinc-900/40 rounded-3xl overflow-hidden shadow-xl aspect-square relative block transition-all duration-500 hover:scale-[1.02] hover:border-brand-accent/20"
