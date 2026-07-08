@@ -49,21 +49,13 @@
 				<h2
 					class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
 				>
-					MEET OUR TEAM
+					MEET OUR FOUNDERS
 				</h2>
 				<p class="text-zinc-450 text-sm font-light font-sans max-w-xl">
 					The visionaries and coating specialists driving perfection in every project. Committed to
 					quality, precision, and durability.
 				</p>
 			</div>
-
-			<a
-				href="/team"
-				class="inline-flex items-center gap-2 text-xs font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/50 hover:bg-zinc-900 px-5 py-3 rounded-xl border border-zinc-800/80 hover:border-brand-accent/40 w-fit"
-			>
-				<span>View Full Team</span>
-				<span>&rarr;</span>
-			</a>
 		</div>
 
 		<!-- Team Grid -->

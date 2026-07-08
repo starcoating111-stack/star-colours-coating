@@ -85,7 +85,7 @@
 				<div class="flex gap-4 sm:gap-6 w-max animate-marquee hover:[animation-play-state:paused] py-4">
 					{#each [...services, ...services, ...services] as service}
 						<a
-							href="/services#{service.slug}"
+							href="/services/{service.slug}"
 							class="w-[75vw] max-w-[280px] sm:w-[280px] sm:max-w-none md:w-[340px] shrink-0 group bg-brand-card border border-zinc-900/80 rounded-[2rem] overflow-hidden shadow-xl flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:border-brand-accent/30 hover:shadow-[0_10px_30px_rgba(197,168,128,0.15)]"
 						>
 							<!-- Image Header -->

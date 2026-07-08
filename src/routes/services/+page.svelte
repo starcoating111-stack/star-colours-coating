@@ -80,8 +80,9 @@
 						use:reveal
 					>
 						<!-- Image side -->
-						<div
-							class="w-full lg:w-1/2 relative group rounded-[2.5rem] overflow-hidden border border-zinc-900 shadow-2xl bg-zinc-900 aspect-[16/10]"
+						<a
+							href="/services/{service.slug}"
+							class="w-full lg:w-1/2 relative group rounded-[2.5rem] overflow-hidden border border-zinc-900 shadow-2xl bg-zinc-900 aspect-[16/10] block"
 						>
 							<img
 								src="/images/{service.imageUrl}"
@@ -91,7 +92,7 @@
 							<div
 								class="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-transparent to-transparent"
 							></div>
-						</div>
+						</a>
 
 						<!-- Details side -->
 						<div class="w-full lg:w-1/2 flex flex-col justify-center space-y-6">
@@ -104,7 +105,9 @@
 								<h2
 									class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white font-outfit uppercase tracking-wide"
 								>
-									{service.title}
+									<a href="/services/{service.slug}" class="hover:text-brand-accent transition-colors">
+										{service.title}
+									</a>
 								</h2>
 								<div class="w-16 h-0.5 bg-brand-accent"></div>
 							</div>
@@ -135,12 +138,21 @@
 							{/if}
 
 							<!-- CTA Action Button -->
-							<div class="pt-4">
+							<div class="pt-4 flex flex-wrap gap-4">
 								<a
 									href="/contact?subject=Inquiry: {encodeURIComponent(service.title)}"
-									class="inline-flex items-center gap-2.5 text-xs font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/50 hover:bg-zinc-900 px-6 py-3.5 rounded-xl border border-zinc-850 hover:border-brand-accent/40 shadow-lg group"
+									class="inline-flex items-center gap-2.5 text-xs font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/50 hover:bg-zinc-900 px-6 py-3.5 rounded-xl border border-zinc-855 hover:border-brand-accent/40 shadow-lg group"
 								>
 									<span>Inquire About This Service</span>
+									<span class="inline-block transition-transform group-hover:translate-x-1"
+										>&rarr;</span
+									>
+								</a>
+								<a
+									href="/services/{service.slug}"
+									class="inline-flex items-center gap-2.5 text-xs font-bold text-zinc-400 hover:text-white transition-colors uppercase tracking-widest font-outfit bg-zinc-900/20 hover:bg-zinc-950 px-6 py-3.5 rounded-xl border border-zinc-900 hover:border-zinc-800 shadow-lg group"
+								>
+									<span>View Details</span>
 									<span class="inline-block transition-transform group-hover:translate-x-1"
 										>&rarr;</span
 									>

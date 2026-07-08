@@ -1,11 +1,23 @@
 <script lang="ts">
 	import starLogo from '$lib/assets/star-logo.png';
+	import { onMount } from 'svelte';
 
-	let { settings } = $props<{
+	let { settings, services = [] } = $props<{
 		settings: { companyName: string; logoUrl?: string | null };
+		services?: Array<{
+			id: number;
+			title: string;
+			slug: string;
+			description: string;
+			imageUrl: string;
+			icon?: string | null;
+		}>;
 	}>();
 
 	let drawerOpen = $state(false);
+	let servicesDrawerOpen = $state(false);
+	let isVisible = $state(true);
+	let lastScrollY = 0;
 
 	function openDrawer() {
 		drawerOpen = true;
@@ -17,6 +29,27 @@
 		drawerOpen = false;
 		document.body.style.overflow = '';
 	}
+
+	function handleScroll() {
+		const currentScrollY = window.scrollY;
+		if (currentScrollY < 50) {
+			isVisible = true;
+		} else if (currentScrollY > lastScrollY) {
+			// Scrolling down - hide
+			isVisible = false;
+		} else {
+			// Scrolling up - show
+			isVisible = true;
+		}
+		lastScrollY = currentScrollY;
+	}
+
+	onMount(() => {
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 
 	let logoSrc = $derived.by(() => {
 		if (!settings?.logoUrl) return starLogo;
@@ -30,18 +63,10 @@
 		return `/images/${settings.logoUrl}`;
 	});
 
-	// Desktop visible links
-	const desktopLinks = [
-		{ name: 'OUR SERVICES', href: '/services' },
-		{ name: 'EXPERIENCE', href: '/about' },
-		{ name: 'PORTFOLIO', href: '/projects' }
-	];
-
-	// All links for the sidebar drawer
+	// All links for the sidebar drawer (About Us -> Our Experience, remove Our Team)
 	const allLinks = [
 		{ name: 'Home', href: '/' },
-		{ name: 'About Us', href: '/about' },
-		{ name: 'Our Team', href: '/team' },
+		{ name: 'Our Experience', href: '/about' },
 		{ name: 'Services', href: '/services' },
 		{ name: 'Portfolio', href: '/projects' },
 		{ name: 'Gallery', href: '/gallery' },
@@ -52,27 +77,68 @@
 </script>
 
 <!-- Sticky navbar -->
-<header class="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900/60">
-	<div class="max-w-7xl mx-auto px-5 sm:px-8 h-18 sm:h-20 flex items-center justify-between gap-4">
+<header class="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900/60 transition-transform duration-300 {isVisible ? 'translate-y-0' : '-translate-y-full'}">
+	<div class="max-w-7xl mx-auto px-5 sm:px-8 h-18 sm:h-20 md:h-24 flex items-center justify-between gap-4">
 		<!-- Logo -->
 		<a href="/" class="flex-shrink-0 flex items-center group">
 			<img
 				src={logoSrc}
 				alt={settings?.companyName || 'Star Colours Coating'}
-				class="h-10 sm:h-12 w-auto max-w-[180px] object-contain transition-transform duration-300 group-hover:scale-105"
+				class="h-10 sm:h-12 md:h-16 w-auto max-w-[180px] md:max-w-[240px] object-contain transition-transform duration-300 group-hover:scale-105"
 			/>
 		</a>
 
 		<!-- Desktop centre links (hidden on mobile) -->
 		<nav class="hidden md:flex items-center gap-6" aria-label="Primary navigation">
-			{#each desktopLinks as link, i}
-				{#if i > 0}<span class="text-zinc-700 text-xs select-none" aria-hidden="true">|</span>{/if}
+			<!-- OUR SERVICES (with Dropdown) -->
+			<div class="relative group py-5">
 				<a
-					href={link.href}
-					class="text-xs font-semibold text-zinc-300 hover:text-white transition-colors tracking-widest font-outfit"
-					>{link.name}</a
+					href="/services"
+					class="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors tracking-widest font-outfit uppercase flex items-center gap-1"
 				>
-			{/each}
+					<span>OUR SERVICES</span>
+					<svg class="w-3 h-3 text-zinc-500 group-hover:text-brand-accent transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+					</svg>
+				</a>
+
+				<!-- Sub-navbar / Dropdown Menu -->
+				<div class="absolute top-[80%] left-1/2 -translate-x-1/2 mt-1 w-80 bg-zinc-950/95 backdrop-blur-md border border-zinc-900 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 pointer-events-none group-hover:pointer-events-auto">
+					<div class="space-y-1">
+						{#each services as service}
+							<a
+								href="/services/{service.slug}"
+								class="flex flex-col gap-0.5 rounded-xl px-4 py-2.5 hover:bg-zinc-900/60 transition-colors group/item"
+							>
+								<span class="text-xs font-bold text-zinc-300 group-hover/item:text-brand-accent transition-colors font-outfit uppercase tracking-wider">{service.title}</span>
+								<span class="text-[10px] text-zinc-500 font-light line-clamp-1 group-hover/item:text-zinc-400 transition-colors">{service.description}</span>
+							</a>
+						{/each}
+						<div class="border-t border-zinc-900/80 mt-2 pt-2 px-4">
+							<a href="/services" class="inline-flex items-center gap-1.5 text-[10px] font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit">
+								<span>View All Services</span>
+								<span>&rarr;</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<span class="text-zinc-700 text-xs select-none" aria-hidden="true">|</span>
+
+			<!-- OUR EXPERIENCE -->
+			<a
+				href="/about"
+				class="text-xs font-semibold text-zinc-300 hover:text-white transition-colors tracking-widest font-outfit uppercase"
+			>OUR EXPERIENCE</a>
+
+			<span class="text-zinc-700 text-xs select-none" aria-hidden="true">|</span>
+
+			<!-- PORTFOLIO -->
+			<a
+				href="/projects"
+				class="text-xs font-semibold text-zinc-300 hover:text-white transition-colors tracking-widest font-outfit uppercase"
+			>PORTFOLIO</a>
 		</nav>
 
 		<!-- Right side: CTA + hamburger -->
@@ -146,22 +212,62 @@
 	<!-- Nav links — scrollable if needed -->
 	<nav class="flex-1 overflow-y-auto px-4 py-5 space-y-1" aria-label="Drawer navigation">
 		{#each allLinks as link}
-			<a
-				href={link.href}
-				onclick={closeDrawer}
-				class="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group"
-			>
-				<span>{link.name.toUpperCase()}</span>
-				<svg
-					class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent -translate-x-1 group-hover:translate-x-0 transition-all"
-					fill="none"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
-					stroke-width="2"
+			{#if link.name === 'Services'}
+				<div>
+					<button
+						onclick={() => servicesDrawerOpen = !servicesDrawerOpen}
+						class="w-full flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group cursor-pointer"
+					>
+						<span>SERVICES</span>
+						<svg
+							class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent transition-transform duration-200 {servicesDrawerOpen ? 'rotate-90' : ''}"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							stroke-width="2"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+						</svg>
+					</button>
+					{#if servicesDrawerOpen}
+						<div class="pl-6 pr-4 py-1 space-y-1 bg-zinc-950/60 border-l border-zinc-900 ml-4 rounded-r-xl">
+							{#each services as service}
+								<a
+									href="/services/{service.slug}"
+									onclick={closeDrawer}
+									class="block rounded-lg px-4 py-2 text-xs font-semibold text-zinc-400 hover:text-brand-accent hover:bg-zinc-900/40 transition-colors uppercase tracking-wider font-outfit"
+								>
+									{service.title}
+								</a>
+							{/each}
+							<a
+								href="/services"
+								onclick={closeDrawer}
+								class="block rounded-lg px-4 py-2 text-xs font-extrabold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit"
+							>
+								View All Services &rarr;
+							</a>
+						</div>
+					{/if}
+				</div>
+			{:else}
+				<a
+					href={link.href}
+					onclick={closeDrawer}
+					class="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group"
 				>
-					<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-				</svg>
-			</a>
+					<span>{link.name.toUpperCase()}</span>
+					<svg
+						class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent -translate-x-1 group-hover:translate-x-0 transition-all"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						stroke-width="2"
+					>
+						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+					</svg>
+				</a>
+			{/if}
 		{/each}
 	</nav>
 

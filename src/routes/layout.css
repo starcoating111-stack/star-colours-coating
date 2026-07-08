@@ -51,19 +51,21 @@ body {
 
 /* Landing Page Scroll Animations */
 @keyframes fadeInUp {
-	from {
+	0% {
 		opacity: 0;
-		transform: translateY(30px);
+		transform: translateY(40px) scale(0.97);
+		filter: blur(8px);
 	}
-	to {
+	100% {
 		opacity: 1;
-		transform: translateY(0);
+		transform: translateY(0) scale(1);
+		filter: blur(0);
 	}
 }
 
 .animate-fade-in-up {
 	opacity: 0;
-	animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Scroll Reveal Animations */
@@ -105,6 +107,10 @@ body {
 .animate-marquee {
 	display: flex;
 	animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+	animation-play-state: paused !important;
 }
 
 .delay-100 {

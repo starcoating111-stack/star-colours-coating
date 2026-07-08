@@ -18,10 +18,10 @@
 	});
 
 	const textureCards = [
-		{ id: 1, name: 'Grooved Plaster', image: '/images/placeholder_texture_1.png', isTorn: false, delay: 0 },
-		{ id: 2, name: 'Stone Cladding',  image: '/images/placeholder_texture_2.png', isTorn: true,  delay: 80 },
-		{ id: 3, name: 'Textured Roller', image: '/images/placeholder_texture_3.png', isTorn: true,  delay: 160 },
-		{ id: 4, name: 'Airless Spray',   image: '/images/placeholder_texture_4.png', isTorn: false, delay: 240 }
+		{ id: 1, name: 'Grooved Plaster', image: '/images/placeholder_texture_1.jpeg', isTorn: false, delay: 0 },
+		{ id: 2, name: 'Stone Cladding',  image: '/images/placeholder_texture_2.jpeg', isTorn: true,  delay: 800 },
+		{ id: 3, name: 'Textured Roller', image: '/images/placeholder_texture_3.jpeg', isTorn: true,  delay: 1600 },
+		{ id: 4, name: 'Airless Spray',   image: '/images/placeholder_texture_4.jpeg', isTorn: false, delay: 2400 }
 	];
 </script>
 
@@ -46,16 +46,19 @@
 			On mobile : 2 × 2 grid, each cell fills the grid row's full height.
 			On desktop: 4-col row, cards tall to fill viewport.
 		-->
-		<div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 h-full">
-			{#each textureCards as card}
+		<div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-[1.6fr_1fr] gap-2 sm:gap-3 md:gap-4 h-full">
+			{#each textureCards as card, index}
 				<div
-					class="relative overflow-hidden group shadow-2xl animate-fade-in-up h-full"
+					class="relative overflow-hidden group shadow-2xl animate-fade-in-up h-full
+					{index === 0 ? 'md:col-start-1 md:row-start-1 md:row-span-2' : ''}
+					{index === 1 ? 'md:col-start-2 md:row-start-1' : ''}
+					{index === 2 ? 'md:col-start-2 md:row-start-2' : ''}
+					{index === 3 ? 'md:col-start-3 md:row-start-1 md:row-span-2' : ''}"
 					style="animation-delay: {card.delay}ms;"
 				>
 					<div
-						class="w-full h-full relative overflow-hidden {card.isTorn
-							? 'bg-zinc-900'
-							: 'rounded-2xl sm:rounded-3xl bg-zinc-900 border border-zinc-800/30'}"
+						class="w-full h-full relative overflow-hidden bg-zinc-950/20 border border-white/10 border-t-white/20 border-l-white/20 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:border-brand-accent/40
+						{index === 2 ? 'rounded-[2rem] md:rounded-full' : 'rounded-2xl sm:rounded-3xl md:rounded-[2.5rem]'}"
 					>
 						<img
 							src={card.image}
@@ -63,15 +66,7 @@
 							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
 							loading="eager"
 						/>
-						<!-- Label: always on mobile, hover on desktop -->
-						<div
-							class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/30 to-transparent pt-8 pb-2.5 px-2.5 sm:pb-4 sm:px-4
-							md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300"
-						>
-							<p class="text-white text-[9px] sm:text-xs font-bold font-outfit uppercase tracking-widest drop-shadow">
-								{card.name}
-							</p>
-						</div>
+
 					</div>
 				</div>
 			{/each}
@@ -82,10 +77,10 @@
 	<div class="relative z-10 flex-shrink-0 flex flex-col items-center gap-2 pt-3 pb-4 sm:pt-4 sm:pb-5 animate-fade-in-up" style="animation-delay: 320ms;">
 		<a
 			href="/contact"
-			class="inline-flex items-center gap-3 bg-zinc-950/70 hover:bg-zinc-900/80 border border-zinc-700/60 hover:border-brand-accent/50 text-zinc-300 hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full backdrop-blur-md transition-all text-xs sm:text-sm font-semibold tracking-wider font-outfit shadow-2xl active:scale-95 group"
+			class="inline-flex items-center gap-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-brand-accent/40 border-t-white/20 border-l-white/20 text-zinc-200 hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full backdrop-blur-xl transition-all duration-300 text-xs sm:text-sm font-bold tracking-wider font-outfit shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] active:scale-95 group"
 		>
 			Let's Work Together
-			<span class="inline-block transition-transform group-hover:translate-x-1.5">&rarr;</span>
+			<span class="inline-block transition-transform group-hover:translate-x-1.5 text-brand-accent">&rarr;</span>
 		</a>
 		<p class="text-zinc-600 text-[8px] sm:text-[9px] tracking-[0.25em] font-outfit uppercase">
 			SCROLL TO DISCOVER

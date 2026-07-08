@@ -19,7 +19,7 @@
 	<div
 		class="min-h-screen bg-brand-dark text-zinc-100 flex flex-col font-sans selection:bg-zinc-800 selection:text-white"
 	>
-		<Nav settings={data.settings} />
+		<Nav settings={data.settings} services={data.services} />
 		<div class="flex-grow">
 			{@render children()}
 		</div>
