@@ -149,3 +149,49 @@ body {
 .animate-fade-in {
 	animation: fadeIn 0.25s ease forwards;
 }
+
+/* Splash screen loader animations */
+@keyframes metallicShimmer {
+	0% {
+		left: -150%;
+	}
+	30% {
+		left: -150%;
+	}
+	100% {
+		left: 150%;
+	}
+}
+
+.animate-shimmer {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(197, 168, 128, 0.35) 50%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	transform: skewX(-25deg);
+	animation: metallicShimmer 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+	0%, 100% {
+		opacity: 0.35;
+		transform: scale(0.96);
+		filter: blur(24px);
+	}
+	50% {
+		opacity: 0.65;
+		transform: scale(1.06);
+		filter: blur(36px);
+	}
+}
+
+.animate-glow-pulse {
+	animation: glowPulse 3s ease-in-out infinite;
+}
+

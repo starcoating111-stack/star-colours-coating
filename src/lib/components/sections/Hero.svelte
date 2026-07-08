@@ -44,29 +44,26 @@
 	<div class="relative z-10 flex-1 min-h-0 px-2.5 sm:px-4 pt-3 sm:pt-4">
 		<!--
 			On mobile : 2 × 2 grid, each cell fills the grid row's full height.
-			On desktop: 4-col row, cards tall to fill viewport.
+			On desktop: 4-column horizontal flex accordion.
 		-->
-		<div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-[1.6fr_1fr] gap-2 sm:gap-3 md:gap-4 h-full">
-			{#each textureCards as card, index}
+		<div class="grid grid-cols-2 md:flex md:flex-row gap-2 sm:gap-3 md:gap-4 h-full">
+			{#each textureCards as card}
 				<div
 					class="relative overflow-hidden group shadow-2xl animate-fade-in-up h-full
-					{index === 0 ? 'md:col-start-1 md:row-start-1 md:row-span-2' : ''}
-					{index === 1 ? 'md:col-start-2 md:row-start-1' : ''}
-					{index === 2 ? 'md:col-start-2 md:row-start-2' : ''}
-					{index === 3 ? 'md:col-start-3 md:row-start-1 md:row-span-2' : ''}"
+					transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]
+					md:flex-1 md:hover:flex-[1.8] rounded-2xl sm:rounded-3xl md:rounded-[2.5rem]
+					motion-reduce:transition-none motion-reduce:hover:flex-1"
 					style="animation-delay: {card.delay}ms;"
 				>
 					<div
-						class="w-full h-full relative overflow-hidden bg-zinc-950/20 border border-white/10 border-t-white/20 border-l-white/20 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-300 group-hover:border-brand-accent/40
-						{index === 2 ? 'rounded-[2rem] md:rounded-full' : 'rounded-2xl sm:rounded-3xl md:rounded-[2.5rem]'}"
+						class="w-full h-full relative overflow-hidden bg-zinc-950/20 border border-white/10 border-t-white/20 border-l-white/20 backdrop-blur-sm shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_12px_40px_rgba(0,0,0,0.5)] transition-all duration-500 group-hover:border-brand-accent/40 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem]"
 					>
 						<img
 							src={card.image}
 							alt={card.name}
-							class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+							class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:transform-none"
 							loading="eager"
 						/>
-
 					</div>
 				</div>
 			{/each}

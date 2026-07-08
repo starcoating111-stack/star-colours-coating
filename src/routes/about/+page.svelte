@@ -50,6 +50,18 @@
 			desc: 'From consultation to the final coat, we collaborate closely with clients—offering a seamless, transparent, and personalized experience!'
 		}
 	];
+
+	const signatures: Record<string, string> = {
+		'kamruddin': '/images/kamruddin.svg',
+		'sahil': '/images/sahil.svg'
+	};
+
+	function getSignature(name: string) {
+		const normalized = name.toLowerCase();
+		if (normalized.includes('kamruddin')) return signatures.kamruddin;
+		if (normalized.includes('sahil')) return signatures.sahil;
+		return null;
+	}
 </script>
 
 <svelte:head>
@@ -199,6 +211,16 @@
 									<p class="text-zinc-300 text-sm sm:text-base leading-relaxed font-light font-sans text-justify">
 										"{member.bio}"
 									</p>
+								{/if}
+
+								{#if getSignature(member.name)}
+									<div class="pt-2 self-start">
+										<img
+											src={getSignature(member.name)}
+											alt="{member.name}'s signature"
+											class="h-12 sm:h-14 w-auto object-contain brightness-200 opacity-85 hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+										/>
+									</div>
 								{/if}
 							</div>
 						</div>

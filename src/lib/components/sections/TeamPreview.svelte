@@ -25,6 +25,18 @@
 			.toUpperCase()
 			.slice(0, 2);
 	}
+
+	const signatures: Record<string, string> = {
+		'kamruddin': '/images/kamruddin.svg',
+		'sahil': '/images/sahil.svg'
+	};
+
+	function getSignature(name: string) {
+		const normalized = name.toLowerCase();
+		if (normalized.includes('kamruddin')) return signatures.kamruddin;
+		if (normalized.includes('sahil')) return signatures.sahil;
+		return null;
+	}
 </script>
 
 <section
@@ -117,10 +129,15 @@
 							<p class="text-xs font-bold text-brand-accent uppercase tracking-widest font-outfit">
 								{member.designation}
 							</p>
-							{#if member.bio}
-								<p class="text-xs text-zinc-400 font-sans leading-relaxed pt-2 line-clamp-2">
-									{member.bio}
-								</p>
+
+							{#if getSignature(member.name)}
+								<div class="pt-3 flex justify-center">
+									<img
+										src={getSignature(member.name)}
+										alt="{member.name}'s signature"
+										class="h-10 sm:h-12 w-auto object-contain brightness-200 opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+									/>
+								</div>
 							{/if}
 						</div>
 
