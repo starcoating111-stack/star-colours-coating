@@ -18,10 +18,10 @@
 	});
 
 	const textureCards = [
-		{ id: 1, name: 'Grooved Plaster', image: '/images/placeholder_texture_1.jpeg', isTorn: false, delay: 0 },
-		{ id: 2, name: 'Stone Cladding',  image: '/images/placeholder_texture_2.jpeg', isTorn: true,  delay: 800 },
-		{ id: 3, name: 'Textured Roller', image: '/images/placeholder_texture_3.jpeg', isTorn: true,  delay: 1600 },
-		{ id: 4, name: 'Airless Spray',   image: '/images/placeholder_texture_4.jpeg', isTorn: false, delay: 2400 }
+		{ id: 1, name: 'Grooved Plaster', image: '/images/placeholder_texture_1.jpeg', isTorn: false, delay: 2200 },
+		{ id: 2, name: 'Stone Cladding',  image: '/images/placeholder_texture_2.jpeg', isTorn: true,  delay: 2900 },
+		{ id: 3, name: 'Textured Roller', image: '/images/placeholder_texture_3.jpeg', isTorn: true,  delay: 3600 },
+		{ id: 4, name: 'Airless Spray',   image: '/images/placeholder_texture_4.jpeg', isTorn: false, delay: 4300 }
 	];
 </script>
 

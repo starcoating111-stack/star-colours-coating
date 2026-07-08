@@ -195,3 +195,17 @@ body {
 	animation: glowPulse 3s ease-in-out infinite;
 }
 
+@keyframes logoFloat {
+	0%, 100% {
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		transform: translateY(-8px) scale(1.025);
+	}
+}
+
+.animate-logo-float {
+	animation: logoFloat 4s ease-in-out infinite;
+}
+
+

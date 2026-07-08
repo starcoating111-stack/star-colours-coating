@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { reveal } from '$lib/reveal';
+	import { onMount } from 'svelte';
 
 	let { projects = [] } = $props<{
 		projects?: Array<{
@@ -11,6 +12,27 @@
 			coverImageUrl: string;
 		}>;
 	}>();
+
+	let gridRef = $state<HTMLElement | null>(null);
+	let parallaxOffset = $state(0);
+
+	onMount(() => {
+		const handleScroll = () => {
+			if (!gridRef) return;
+			const rect = gridRef.getBoundingClientRect();
+			const viewportHeight = window.innerHeight;
+			if (rect.top < viewportHeight && rect.bottom > 0) {
+				const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+				// Max translate 24px (ranges from -12px to +12px) for subtle card parallax
+				parallaxOffset = (progress - 0.5) * 24;
+			}
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		handleScroll();
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 </script>
 
 <section
@@ -57,6 +79,7 @@
 			</div>
 		{:else}
 			<div
+				bind:this={gridRef}
 				class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 reveal-fade-up"
 				use:reveal
 			>
@@ -72,7 +95,8 @@
 							<img
 								src="/images/{project.coverImageUrl}"
 								alt={project.title}
-								class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+								class="w-full h-[115%] absolute left-0 top-[-7.5%] object-cover transition-transform duration-700 group-hover:scale-[1.08] will-change-transform motion-reduce:transform-none"
+								style="transform: translateY({parallaxOffset}px);"
 							/>
 							<span
 								class="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold bg-zinc-950/80 border border-zinc-800 text-brand-accent uppercase tracking-wider font-outfit backdrop-blur-md shadow-lg"

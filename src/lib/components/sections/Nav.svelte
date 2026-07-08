@@ -16,6 +16,7 @@
 
 	let drawerOpen = $state(false);
 	let servicesDrawerOpen = $state(false);
+	let experienceDrawerOpen = $state(false);
 	let isVisible = $state(true);
 	let lastScrollY = 0;
 
@@ -129,11 +130,43 @@
 
 			<span class="text-zinc-700 text-xs select-none" aria-hidden="true">|</span>
 
-			<!-- OUR EXPERIENCE -->
-			<a
-				href="/about"
-				class="text-xs font-semibold text-zinc-300 hover:text-white transition-colors tracking-widest font-outfit uppercase"
-			>OUR EXPERIENCE</a>
+			<!-- OUR EXPERIENCE (with Dropdown) -->
+			<div class="relative group py-5">
+				<a
+					href="/about"
+					class="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors tracking-widest font-outfit uppercase flex items-center gap-1"
+				>
+					<span>OUR EXPERIENCE</span>
+					<svg class="w-3 h-3 text-zinc-550 group-hover:text-brand-accent transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+					</svg>
+				</a>
+
+				<!-- Sub-navbar / Dropdown Menu -->
+				<div class="absolute top-[85%] left-0 mt-1 w-64 bg-zinc-950/95 backdrop-blur-md border border-zinc-900 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 pointer-events-none group-hover:pointer-events-auto flex flex-col gap-1">
+					<a
+						href="/about"
+						class="flex flex-col gap-0.5 rounded-xl px-4 py-2.5 hover:bg-zinc-900/40 transition-colors group/item"
+					>
+						<span class="text-xs font-bold text-zinc-300 group-hover/item:text-brand-accent transition-colors font-outfit uppercase tracking-wider">Our Legacy</span>
+						<span class="text-[10px] text-zinc-500 font-light group-hover/item:text-zinc-400 transition-colors">Our experience & team background</span>
+					</a>
+					<a
+						href="/STAR%20COLOURS%20COATING-%20%7BWELCOME%20LETTER%7D.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="flex flex-col gap-0.5 rounded-xl px-4 py-2.5 hover:bg-zinc-900/40 transition-colors group/item"
+					>
+						<span class="text-xs font-bold text-zinc-300 group-hover/item:text-brand-accent transition-colors font-outfit uppercase tracking-wider flex items-center gap-1.5">
+							<span>Why Choose SCC</span>
+							<svg class="w-3 h-3 text-zinc-500 group-hover/item:text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+							</svg>
+						</span>
+						<span class="text-[10px] text-zinc-500 font-light group-hover/item:text-zinc-400 transition-colors">Open welcome letter in a new tab</span>
+					</a>
+				</div>
+			</div>
 
 			<span class="text-zinc-700 text-xs select-none" aria-hidden="true">|</span>
 
@@ -254,22 +287,65 @@
 					{/if}
 				</div>
 			{:else}
-				<a
-					href={link.href}
-					onclick={closeDrawer}
-					class="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group"
-				>
-					<span>{link.name.toUpperCase()}</span>
-					<svg
-						class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent -translate-x-1 group-hover:translate-x-0 transition-all"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-						stroke-width="2"
+				{#if link.name === 'Our Experience'}
+					<div>
+						<button
+							onclick={() => experienceDrawerOpen = !experienceDrawerOpen}
+							class="w-full flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group cursor-pointer"
+						>
+							<span>OUR EXPERIENCE</span>
+							<svg
+								class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent transition-transform duration-200 {experienceDrawerOpen ? 'rotate-90' : ''}"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+								stroke-width="2"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+							</svg>
+						</button>
+						{#if experienceDrawerOpen}
+							<div class="pl-6 pr-4 py-1 space-y-1 bg-zinc-950/60 border-l border-zinc-900 ml-4 rounded-r-xl">
+								<a
+									href="/about"
+									onclick={closeDrawer}
+									class="block rounded-lg px-4 py-2 text-xs font-semibold text-zinc-400 hover:text-brand-accent hover:bg-zinc-900/40 transition-colors uppercase tracking-wider font-outfit"
+								>
+									Our Legacy
+								</a>
+								<a
+									href="/STAR%20COLOURS%20COATING-%20%7BWELCOME%20LETTER%7D.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+									onclick={closeDrawer}
+									class="block rounded-lg px-4 py-2 text-xs font-semibold text-zinc-400 hover:text-brand-accent hover:bg-zinc-900/40 transition-colors uppercase tracking-wider font-outfit flex items-center gap-1.5"
+								>
+									<span>Why Choose Star Colours Coating</span>
+									<svg class="w-3 h-3 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+								</a>
+							</div>
+						{/if}
+					</div>
+				{:else}
+					<a
+						href={link.href}
+						onclick={closeDrawer}
+						class="flex items-center justify-between rounded-xl px-4 py-3.5 text-sm font-semibold text-zinc-300 hover:text-brand-accent hover:bg-zinc-900/60 tracking-widest font-outfit transition-all group"
 					>
-						<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-					</svg>
-				</a>
+						<span>{link.name.toUpperCase()}</span>
+						<svg
+							class="w-4 h-4 text-zinc-600 group-hover:text-brand-accent -translate-x-1 group-hover:translate-x-0 transition-all"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							stroke-width="2"
+						>
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+						</svg>
+					</a>
+				{/if}
 			{/if}
 		{/each}
 	</nav>

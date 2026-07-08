@@ -1,5 +1,27 @@
 <script lang="ts">
 	import { reveal } from '$lib/reveal';
+	import { onMount } from 'svelte';
+
+	let sectionRef = $state<HTMLElement | null>(null);
+	let parallaxOffset = $state(0);
+
+	onMount(() => {
+		const handleScroll = () => {
+			if (!sectionRef) return;
+			const rect = sectionRef.getBoundingClientRect();
+			const viewportHeight = window.innerHeight;
+			if (rect.top < viewportHeight && rect.bottom > 0) {
+				const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+				// Max translate 40px (ranges from -20px to +20px)
+				parallaxOffset = (progress - 0.5) * 40;
+			}
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		handleScroll();
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	});
 
 	const cases = [
 		{
@@ -124,12 +146,14 @@
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch reveal-fade-up" use:reveal>
 			<!-- Left image area -->
 			<div
+				bind:this={sectionRef}
 				class="lg:col-span-7 bg-zinc-900/20 rounded-3xl overflow-hidden border border-zinc-850 aspect-[4/3] w-full relative"
 			>
 				<img
 					src={activeTab === 'before' ? currentCase.beforeImage : currentCase.afterImage}
 					alt="{currentCase.title} - {activeTab}"
-					class="w-full h-full object-cover transition-opacity duration-300"
+					class="w-full h-[115%] absolute left-0 top-[-7.5%] object-cover transition-opacity duration-300 will-change-transform motion-reduce:transform-none"
+					style="transform: translateY({parallaxOffset}px);"
 				/>
 				<!-- Badge -->
 				<span
