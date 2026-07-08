@@ -102,24 +102,27 @@
 					</svg>
 				</a>
 
-				<!-- Sub-navbar / Dropdown Menu -->
-				<div class="absolute top-[80%] left-1/2 -translate-x-1/2 mt-1 w-80 bg-zinc-950/95 backdrop-blur-md border border-zinc-900 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 pointer-events-none group-hover:pointer-events-auto">
-					<div class="space-y-1">
+				<!-- Sub-navbar / Dropdown Menu (Horizontal Mega-menu) -->
+				<div class="absolute top-[85%] left-1/2 -translate-x-1/2 mt-1 w-[90vw] md:w-[680px] lg:w-[840px] bg-zinc-950/95 backdrop-blur-md border border-zinc-900 rounded-3xl shadow-[0_25px_60px_rgba(0,0,0,0.65)] p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 pointer-events-none group-hover:pointer-events-auto">
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
 						{#each services as service}
 							<a
 								href="/services/{service.slug}"
-								class="flex flex-col gap-0.5 rounded-xl px-4 py-2.5 hover:bg-zinc-900/60 transition-colors group/item"
+								class="flex flex-col gap-0.5 rounded-xl px-4 py-2.5 hover:bg-zinc-900/40 transition-colors group/item"
 							>
-								<span class="text-xs font-bold text-zinc-300 group-hover/item:text-brand-accent transition-colors font-outfit uppercase tracking-wider">{service.title}</span>
+								<span class="text-xs font-bold text-zinc-300 group-hover/item:text-brand-accent transition-colors font-outfit uppercase tracking-wider truncate">{service.title}</span>
 								<span class="text-[10px] text-zinc-500 font-light line-clamp-1 group-hover/item:text-zinc-400 transition-colors">{service.description}</span>
 							</a>
 						{/each}
-						<div class="border-t border-zinc-900/80 mt-2 pt-2 px-4">
-							<a href="/services" class="inline-flex items-center gap-1.5 text-[10px] font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit">
-								<span>View All Services</span>
-								<span>&rarr;</span>
-							</a>
-						</div>
+					</div>
+					<div class="border-t border-zinc-900/60 mt-5 pt-4 px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+						<span class="text-[9px] font-bold text-zinc-600 uppercase tracking-[0.25em] font-outfit">
+							Star Colours Coating • Signature Finishes
+						</span>
+						<a href="/services" class="inline-flex items-center gap-1.5 text-[10px] font-bold text-brand-accent hover:text-white transition-colors uppercase tracking-widest font-outfit">
+							<span>View All Services</span>
+							<span>&rarr;</span>
+						</a>
 					</div>
 				</div>
 			</div>
