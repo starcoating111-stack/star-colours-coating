@@ -46,28 +46,27 @@
 	<div class="max-w-7xl mx-auto space-y-16">
 		<!-- Header -->
 		<div
-			class="flex flex-col md:flex-row md:items-end justify-between gap-6 reveal-fade-up"
+			class="text-center space-y-3 max-w-2xl mx-auto reveal-fade-up"
 			use:reveal
 		>
-			<div class="space-y-3">
-				<div class="inline-flex items-center gap-2">
-					<span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-					<span
-						class="text-[10px] font-bold text-brand-accent uppercase tracking-widest font-outfit"
-					>
-						LEADERSHIP & EXPERTISE
-					</span>
-				</div>
-				<h2
-					class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
+			<div class="inline-flex items-center gap-2">
+				<span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+				<span
+					class="text-[10px] font-bold text-brand-accent uppercase tracking-widest font-outfit"
 				>
-					MEET OUR FOUNDERS
-				</h2>
-				<p class="text-zinc-450 text-sm font-light font-sans max-w-xl">
-					The visionaries and coating specialists driving perfection in every project. Committed to
-					quality, precision, and durability.
-				</p>
+					LEADERSHIP & EXPERTISE
+				</span>
 			</div>
+			<h2
+				class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight uppercase font-outfit"
+			>
+				MEET OUR FOUNDERS
+			</h2>
+			<p class="text-zinc-450 text-sm font-light font-sans max-w-xl mx-auto">
+				The visionaries and coating specialists driving perfection in every project. Committed to
+				quality, precision, and durability.
+			</p>
+			<div class="w-24 h-0.5 bg-brand-accent mx-auto mt-4"></div>
 		</div>
 
 		<!-- Team Grid -->
