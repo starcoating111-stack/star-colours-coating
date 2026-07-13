@@ -52,7 +52,7 @@ INSERT OR REPLACE INTO admin (id, password_hash, password_changed_at, updated_at
 VALUES (1, '${passwordHash}', ${nowMs}, ${nowMs});
 
 INSERT OR REPLACE INTO settings (id, company_name, tagline, logo_url, phone, email, address, working_hours) 
-VALUES (1, 'CodeNXT Lab Client', 'Crafting Modern Digital Experiences', 'placeholder-logo.png', '+1 (555) 019-9000', 'hello@clientcompany.com', '123 Agency Way, Suite 400', 'Mon-Fri 9am-6pm');
+VALUES (1, 'Star Colours Coating', 'Crafting Modern Digital Experiences', 'placeholder-logo.png', '+1 (555) 019-9000', 'hello@clientcompany.com', '123 Agency Way, Suite 400', 'Mon-Fri 9am-6pm');
 
 INSERT OR REPLACE INTO faq (id, question, answer, sort_order) VALUES 
 (1, 'What is your typical project timeline?', 'Most projects range from 4 to 8 weeks depending on the complexity of requirements and design iterations.', 10),

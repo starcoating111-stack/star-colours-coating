@@ -45,7 +45,7 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "${data.settings?.companyName || 'Client Site'}",
+      "name": "${data.settings?.companyName || 'Star Colours Coating'}",
       "description": "${siteConfig.seo.description}",
       "telephone": "${data.settings?.phone || ''}",
       "email": "${data.settings?.email || ''}",

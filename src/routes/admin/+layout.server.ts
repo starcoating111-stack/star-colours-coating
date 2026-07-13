@@ -9,7 +9,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 		const [config] = await db.select().from(settings).where(eq(settings.id, 1));
 		return {
 			isAdmin: true,
-			companyName: config?.companyName ?? 'Client Site',
+			companyName: config?.companyName ?? 'Star Colours Coating',
 			logoUrl: config?.logoUrl
 		};
 	}

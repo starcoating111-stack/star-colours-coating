@@ -96,7 +96,7 @@
 			>
 				<div>
 					<h1 class="text-sm font-semibold text-zinc-300">
-						{data.companyName ?? 'Client Site'}
+						{data.companyName ?? 'Star Colours Coating'}
 					</h1>
 				</div>
 				<div class="flex items-center gap-4 text-xs text-zinc-500">

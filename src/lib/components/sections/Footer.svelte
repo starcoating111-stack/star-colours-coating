@@ -216,6 +216,17 @@
 			{settings.companyName || 'Star Colours Coating'} • Finishing with Perfection! All rights reserved.
 		</span>
 		<span>
+			MSME Udyam No:
+			<a
+				href="https://udyamregistration.gov.in/verifyudyambarcode.aspx?verifyudrn=V23dfDJaf1RS0s5G+bLIA7uaQvcJb5L+wtTU+99ctc8="
+				target="_blank"
+				rel="noopener noreferrer"
+				class="hover:text-zinc-300 underline transition-colors font-semibold"
+			>
+				UDYAM-MH-19-0411458
+			</a>
+		</span>
+		<span>
 			Designed & Developed by <a
 				href="https://codenxtlab.tech/"
 				target="_blank"

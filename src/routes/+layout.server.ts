@@ -8,7 +8,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 	if (building || !platform?.env?.DB) {
 		return {
 			settings: {
-				companyName: 'Client Site',
+				companyName: 'Star Colours Coating',
 				tagline: 'Crafting High-Performance Web Solutions',
 				phone: '',
 				email: '',
@@ -28,7 +28,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 		const servicesList = await db.select().from(services).orderBy(asc(services.sortOrder)).limit(7);
 		return {
 			settings: config ?? {
-				companyName: 'Client Site',
+				companyName: 'Star Colours Coating',
 				tagline: 'Crafting High-Performance Web Solutions',
 				phone: '',
 				email: '',
@@ -43,7 +43,7 @@ export const load: LayoutServerLoad = async ({ locals, platform }) => {
 		console.error('Error loading global layout settings:', err);
 		return {
 			settings: {
-				companyName: 'Client Site',
+				companyName: 'Star Colours Coating',
 				tagline: 'Crafting High-Performance Web Solutions',
 				phone: '',
 				email: '',
