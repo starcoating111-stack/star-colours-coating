@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({ platform }) => {
 		const [config] = await db.select().from(settings).where(eq(settings.id, 1));
 		return {
 			settings: config ?? {
-				companyName: 'Star Colours Coating',
+				companyName: 'Client Site',
 				tagline: '',
 				logoUrl: '',
 				phone: '',

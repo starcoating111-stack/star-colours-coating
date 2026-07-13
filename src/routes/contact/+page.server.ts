@@ -105,7 +105,7 @@ export const actions: Actions = {
 				if (apiKey && bounceEmail) {
 					try {
 						const [config] = await db.select().from(settings).where(eq(settings.id, 1));
-						const companyName = config?.companyName ?? 'Star Colours Coating';
+						const companyName = config?.companyName ?? 'Client Site';
 						const ownerEmail = config?.email ?? bounceEmail.replace('bounce@', 'hello@');
 
 						await sendEmailViaZeptoMail(
