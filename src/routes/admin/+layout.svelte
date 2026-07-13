@@ -27,6 +27,7 @@
 		{ name: 'Media Gallery', path: '/admin/gallery', icon: 'Image' },
 		{ name: 'Team Members', path: '/admin/team', icon: 'Users' },
 		{ name: 'Testimonials', path: '/admin/testimonials', icon: 'MessageSquareStar' },
+		{ name: 'Transformations', path: '/admin/transformations', icon: 'ArrowLeftRight' },
 		{ name: 'FAQs', path: '/admin/faq', icon: 'HelpCircle' },
 		{ name: 'Form Submissions', path: '/admin/messages', icon: 'Mail' }
 	];

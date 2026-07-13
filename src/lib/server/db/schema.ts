@@ -187,3 +187,20 @@ export const rateLimits = sqliteTable(
 		};
 	}
 );
+
+// transformations (before/after showcase)
+export const transformations = sqliteTable('transformations', {
+	id: integer('id').primaryKey({ autoIncrement: true }),
+	title: text('title').notNull(),
+	challenge: text('challenge').notNull(),
+	result: text('result').notNull(),
+	beforeImageUrl: text('before_image_url').notNull(), // R2 key
+	afterImageUrl: text('after_image_url').notNull(), // R2 key
+	sortOrder: integer('sort_order').notNull().default(0),
+	createdAt: integer('created_at', { mode: 'timestamp_ms' }).default(
+		sql`(strftime('%s', 'now') * 1000)`
+	),
+	updatedAt: integer('updated_at', { mode: 'timestamp_ms' }).default(
+		sql`(strftime('%s', 'now') * 1000)`
+	)
+});

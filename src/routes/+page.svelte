@@ -18,6 +18,7 @@
 			testimonials: any[];
 			faqs: any[];
 			teamMembers: any[];
+		transformations: any[];
 		};
 	}>();
 </script>
@@ -71,7 +72,7 @@
 		{:else if module === 'testimonials'}
 			<Testimonials testimonials={data.testimonials} />
 		{:else if module === 'transformations'}
-			<Transformations />
+			<Transformations transformations={data.transformations} />
 		{:else if module === 'faqPreview'}
 			<FaqPreview faqs={data.faqs} />
 		{:else if module === 'contactCta'}
